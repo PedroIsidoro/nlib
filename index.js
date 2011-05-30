@@ -1,6 +1,3 @@
-var path = require('path');
-
-
 // App class
 exports.App = require('./lib/app');
 
