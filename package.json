@@ -1,0 +1,17 @@
+{
+  "name": "nodeca-lib",
+  "description": "Core nodeca libraries and tools",
+  "version": "0.0.1",
+  "author": "Aleksey V Zapparov <ixti@member.fsf.org> (http://ixti.ru)",
+  "repository": "git://github.com/nodeca/nodeca-lib",
+  "main": "index.js",
+  "dependencies":
+  {
+    "express-railer": "https://github.com/nodeca/express-railer/tarball/master"
+    "express": ">= 2.3.4"
+  },
+  "dev-dependencies":
+  {
+    "vows": ">= 0.5.8"
+  }
+}
