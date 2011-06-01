@@ -1,5 +1,6 @@
-// App class
-exports.App = require('./lib/app');
+exports.Application = require('./lib/application');
+exports.Utilities = require('./lib/utilities');
+exports.Promise = require('./lib/promise');
 
 
 ////////////////////////////////////////////////////////////////////////////////
