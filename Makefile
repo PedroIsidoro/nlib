@@ -15,3 +15,6 @@ test:
 
 docs:
 	./support/generate-docs.rb
+
+todo:
+	@grep 'TODO' -n -r ./lib
