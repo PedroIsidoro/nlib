@@ -8,6 +8,7 @@
   "dependencies":
   {
     "express-railer": "https://github.com/nodeca/express-railer/tarball/master",
+    "express": ">= 2.3.4",
     "yaml": ">= 0.2.1"
   },
   "dev-dependencies":
