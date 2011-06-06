@@ -4,16 +4,6 @@ var assert = require('assert'),
 
 
 vows.describe('Promise.Joint').addBatch({
-  "Joint instance": {
-    topic: new Promise.Joint(),
-    "response to include(), wait(), reject(), done()": function (joint) {
-      assert.isFunction(joint.include);
-      assert.isFunction(joint.wait);
-      assert.isFunction(joint.reject);
-      assert.isFunction(joint.done);
-    }
-  }
-}).addBatch({
   "When joint resolved": {
     topic: function () {
       var p1 = Promise(),

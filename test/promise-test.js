@@ -4,14 +4,6 @@ var assert = require('assert'),
 
 
 vows.describe('Promise').addBatch({
-  "Promise instance": {
-    topic: new Promise(),
-    "response resolve() and done() methods": function (p) {
-      assert.isFunction(p.resolve);
-      assert.isFunction(p.done);
-    }
-  }
-}).addBatch({
   "When promise resolved": {
     topic: function () {
       Promise(this.callback).done(this.callback).resolve(null, 123);
