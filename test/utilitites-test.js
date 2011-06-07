@@ -61,9 +61,9 @@ vows.describe('Utilities').addBatch({
     }
   }
 }).addBatch(
-  helpers.formatReaderTests('YAML', $$.readYaml)
+  helpers.formatReaderTests('YAML', $$.readYaml, $$.readYamlSync)
 ).addBatch(
-  helpers.formatReaderTests('JSON', $$.readJson)
+  helpers.formatReaderTests('JSON', $$.readJson, $$.readJsonSync)
 ).addBatch({
   "When iterating objects": {
     topic: function () {
