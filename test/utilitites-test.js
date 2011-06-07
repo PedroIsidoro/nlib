@@ -85,6 +85,57 @@ vows.describe('Utilities').addBatch({
     }
   }
 }).addBatch({
+  "When iterating objects": {
+    topic: function () {
+      var keys = [], vals = [], callback = this.callback;
+
+      $$.iterate({a: 1, b: 2, c: 3}, function (k, v, next) {
+        keys.push(k);
+        vals.push(v);
+        next();
+      }, function () {
+        callback(null, keys, vals);
+      });
+    },
+    "first argument of each() callback is property name": function (nil, keys, vals) {
+      assert.length(keys, 3);
+      assert.include(keys, 'a');
+      assert.include(keys, 'b');
+      assert.include(keys, 'c');
+    },
+    "second argument of each() callback is property value": function (nil, keys, vals) {
+      assert.length(vals, 3);
+      assert.include(vals, 1);
+      assert.include(vals, 2);
+      assert.include(vals, 3);
+    }
+  },
+  "When iterating arrays": {
+    topic: function () {
+      var idxs = [], vals = [], callback = this.callback;
+
+      $$.iterate(['a', 'b', 'c'], function (i, v, next) {
+        idxs.push(i);
+        vals.push(v);
+        next();
+      }, function () {
+        callback(null, idxs, vals);
+      });
+    },
+    "first argument of each() callback is element index": function (nil, idxs, vals) {
+      assert.length(idxs, 3);
+      assert.include(idxs, 0);
+      assert.include(idxs, 1);
+      assert.include(idxs, 2);
+    },
+    "second argument of each() callback is property value": function (nil, keys, vals) {
+      assert.length(vals, 3);
+      assert.include(vals, 'a');
+      assert.include(vals, 'b');
+      assert.include(vals, 'c');
+    }
+  }
+}).addBatch({
   "When exception is thrown inside iteration": {
     topic: function () {
       var callback = this.callback,
