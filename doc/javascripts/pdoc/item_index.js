@@ -10,6 +10,8 @@ PDoc.elements = {
 'Utilities.grab': { 'name': 'Utilities.grab', 'type': 'class method', 'path': 'Utilities/grab/index.html' },
 'Utilities.parseYaml': { 'name': 'Utilities.parseYaml', 'type': 'class method', 'path': 'Utilities/parseYaml/index.html' },
 'Utilities.readYaml': { 'name': 'Utilities.readYaml', 'type': 'class method', 'path': 'Utilities/readYaml/index.html' },
+'Utilities.parseJson': { 'name': 'Utilities.parseJson', 'type': 'class method', 'path': 'Utilities/parseJson/index.html' },
+'Utilities.readJson': { 'name': 'Utilities.readJson', 'type': 'class method', 'path': 'Utilities/readJson/index.html' },
 'Utilities.iterate': { 'name': 'Utilities.iterate', 'type': 'class method', 'path': 'Utilities/iterate/index.html' },
 'Promise.Joint': { 'name': 'Promise.Joint', 'type': 'class', 'path': 'Promise/Joint/index.html' },
 'new Promise.Joint': { 'name': 'new Promise.Joint', 'type': 'constructor', 'path': 'Promise/Joint/new/index.html' },
@@ -21,10 +23,12 @@ PDoc.elements = {
 'new Application': { 'name': 'new Application', 'type': 'constructor', 'path': 'Application/new/index.html' },
 'Application#__dirname__': { 'name': 'Application#__dirname__', 'type': 'instance property', 'path': 'Application/prototype/__dirname__/index.html' },
 'Application#__apps__': { 'name': 'Application#__apps__', 'type': 'instance property', 'path': 'Application/prototype/__apps__/index.html' },
+'Application#__info__': { 'name': 'Application#__info__', 'type': 'instance property', 'path': 'Application/prototype/__info__/index.html' },
 'Application#getConfig': { 'name': 'Application#getConfig', 'type': 'instance method', 'path': 'Application/prototype/getConfig/index.html' },
 'Application#require': { 'name': 'Application#require', 'type': 'instance method', 'path': 'Application/prototype/require/index.html' },
 'Application#dispatcher': { 'name': 'Application#dispatcher', 'type': 'instance property', 'path': 'Application/prototype/dispatcher/index.html' },
 'Application#router': { 'name': 'Application#router', 'type': 'instance property', 'path': 'Application/prototype/router/index.html' },
 'Application#mount': { 'name': 'Application#mount', 'type': 'instance method', 'path': 'Application/prototype/mount/index.html' },
+'Application#logger': { 'name': 'Application#logger', 'type': 'instance property', 'path': 'Application/prototype/logger/index.html' },
 'Application#init': { 'name': 'Application#init', 'type': 'instance method', 'path': 'Application/prototype/init/index.html' }
 };
