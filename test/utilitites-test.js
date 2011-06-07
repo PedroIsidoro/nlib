@@ -45,7 +45,6 @@ vows.describe('Utilities').addBatch({
       assert.isString(o.object_to_string);
     }
   },
-
   "When grab'ing objcet's value": {
     topic: function () {
       var o = {a: 1, b: 2};
@@ -74,6 +73,30 @@ vows.describe('Utilities').addBatch({
     topic: function () {
       var callback = this.callback;
       $$.readYaml(__dirname + '/fixtures/sample-invalid.yml', function (err, obj) {
+        // callback should be called with null first, otherwise it will drop
+        // all other params that were left
+        callback(null, err, obj);
+      });
+    },
+    "should return error and no data": function (nil, err, obj) {
+      assert.instanceOf(err, Error);
+      assert.isUndefined(obj);
+    }
+  }
+}).addBatch({
+  "Reading valid JSON file": {
+    topic: function () {
+      $$.readJson(__dirname + '/fixtures/sample-valid.json', this.callback);
+    },
+    "should return object": function (err, obj) {
+      assert.isString(obj.str);
+      assert.isNumber(obj.inner.nbr);
+    }
+  },
+  "Reading invalid JSON file": {
+    topic: function () {
+      var callback = this.callback;
+      $$.readJson(__dirname + '/fixtures/sample-invalid.json', function (err, obj) {
         // callback should be called with null first, otherwise it will drop
         // all other params that were left
         callback(null, err, obj);
