@@ -1,6 +1,7 @@
 var assert = require('assert'),
     vows = require('vows'),
-    $$ = require('../lib/utilities');
+    $$ = require('../lib/utilities'),
+    helpers = require('./helpers');
 
 
 vows.describe('Utilities').addBatch({
@@ -59,55 +60,11 @@ vows.describe('Utilities').addBatch({
       assert.equal(r.b, 2);
     }
   }
-}).addBatch({
-  "Reading valid YAML file": {
-    topic: function () {
-      $$.readYaml(__dirname + '/fixtures/sample-valid.yml', this.callback);
-    },
-    "should return object": function (err, obj) {
-      assert.isString(obj.str);
-      assert.isNumber(obj.inner.nbr);
-    }
-  },
-  "Reading invalid YAML file": {
-    topic: function () {
-      var callback = this.callback;
-      $$.readYaml(__dirname + '/fixtures/sample-invalid.yml', function (err, obj) {
-        // callback should be called with null first, otherwise it will drop
-        // all other params that were left
-        callback(null, err, obj);
-      });
-    },
-    "should return error and no data": function (nil, err, obj) {
-      assert.instanceOf(err, Error);
-      assert.isUndefined(obj);
-    }
-  }
-}).addBatch({
-  "Reading valid JSON file": {
-    topic: function () {
-      $$.readJson(__dirname + '/fixtures/sample-valid.json', this.callback);
-    },
-    "should return object": function (err, obj) {
-      assert.isString(obj.str);
-      assert.isNumber(obj.inner.nbr);
-    }
-  },
-  "Reading invalid JSON file": {
-    topic: function () {
-      var callback = this.callback;
-      $$.readJson(__dirname + '/fixtures/sample-invalid.json', function (err, obj) {
-        // callback should be called with null first, otherwise it will drop
-        // all other params that were left
-        callback(null, err, obj);
-      });
-    },
-    "should return error and no data": function (nil, err, obj) {
-      assert.instanceOf(err, Error);
-      assert.isUndefined(obj);
-    }
-  }
-}).addBatch({
+}).addBatch(
+  helpers.formatReaderTests('YAML', $$.readYaml)
+).addBatch(
+  helpers.formatReaderTests('JSON', $$.readJson)
+).addBatch({
   "When iterating objects": {
     topic: function () {
       var keys = [], vals = [], callback = this.callback;
