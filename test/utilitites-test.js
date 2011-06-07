@@ -4,6 +4,63 @@ var assert = require('assert'),
 
 
 vows.describe('Utilities').addBatch({
+  "When deepMerge'ing objects": {
+    topic: function () {
+      var a = {
+            number: 123,
+            string: 'abc',
+            array: [1, 2, 3],
+            inner: {
+              number: 123,
+              string: 'abc'
+            },
+            string_to_object: '',
+            object_to_string: {}
+          },
+          b = {
+            array: [9],
+            string: 'cba',
+            inner: {
+              number: 321
+            },
+            string_to_object: {},
+            object_to_string: ''
+          };
+
+      $$.deepMerge(a, b);
+      return a;
+    },
+    "non-objects are overridden": function (o) {
+      assert.equal(o.string, 'cba');
+      assert.length(o.array, 1);
+      assert.include(o.array, 9);
+    },
+    "and objects are merged recursively": function (o) {
+      assert.isObject(o.inner);
+      assert.equal(o.inner.string, 'abc');
+      assert.equal(o.inner.number, 321);
+    },
+    "only if both sides' properties are objects": function (o) {
+      assert.isObject(o.string_to_object);
+      assert.isString(o.object_to_string);
+    }
+  },
+
+  "When grab'ing objcet's value": {
+    topic: function () {
+      var o = {a: 1, b: 2};
+      return {o: o, b: $$.grab(o, 'b'), c: $$.grab(o, 'c')};
+    },
+    "undefined values are returned as is": function (r) {
+      assert.isUndefined(r.o.c);
+      assert.isUndefined(r.c);
+    },
+    "grabbed key is removed from object": function (r) {
+      assert.isUndefined(r.o.b);
+      assert.equal(r.b, 2);
+    }
+  }
+}).addBatch({
   "Reading valid YAML file": {
     topic: function () {
       $$.readYaml(__dirname + '/fixtures/sample-valid.yml', this.callback);
