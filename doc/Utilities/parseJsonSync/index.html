@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>nodeca-lib  v0.0.1- API documentation | Utilities.parseJson</title>
+  <title>nodeca-lib  v0.0.1- API documentation | Utilities.parseJsonSync</title>
   <meta name="generator" content="PDoc" />
   
   <script charset="utf-8" src="../../javascripts/pdoc/prototype.js" type="text/javascript"></script>
@@ -43,8 +43,8 @@
 <li><div class="menu-item"><a class="class current-parent" href="../../Utilities/index.html" title="Utilities (class)">Utilities</a></div><ul><li><div class="menu-item"><a class="class-method" href="../../Utilities/deepMerge/index.html" title="Utilities.deepMerge (class method)">deepMerge</a></div></li>
 <li><div class="menu-item"><a class="class-method" href="../../Utilities/grab/index.html" title="Utilities.grab (class method)">grab</a></div></li>
 <li><div class="menu-item"><a class="class-method" href="../../Utilities/iterate/index.html" title="Utilities.iterate (class method)">iterate</a></div></li>
-<li><div class="menu-item"><a class="class-method current" href="../../Utilities/parseJson/index.html" title="Utilities.parseJson (class method)">parseJson</a></div></li>
-<li><div class="menu-item"><a class="class-method" href="../../Utilities/parseJsonSync/index.html" title="Utilities.parseJsonSync (class method)">parseJsonSync</a></div></li>
+<li><div class="menu-item"><a class="class-method" href="../../Utilities/parseJson/index.html" title="Utilities.parseJson (class method)">parseJson</a></div></li>
+<li><div class="menu-item"><a class="class-method current" href="../../Utilities/parseJsonSync/index.html" title="Utilities.parseJsonSync (class method)">parseJsonSync</a></div></li>
 <li><div class="menu-item"><a class="class-method" href="../../Utilities/parseYaml/index.html" title="Utilities.parseYaml (class method)">parseYaml</a></div></li>
 <li><div class="menu-item"><a class="class-method" href="../../Utilities/parseYamlSync/index.html" title="Utilities.parseYamlSync (class method)">parseYamlSync</a></div></li>
 <li><div class="menu-item"><a class="class-method" href="../../Utilities/readJson/index.html" title="Utilities.readJson (class method)">readJson</a></div></li>
@@ -67,14 +67,14 @@
 <ul class="breadcrumbs clearfix">
   <li><a href="../../">Home</a></li>
     <li>&rarr; <a href="../../Utilities/index.html" title="Utilities (class)">Utilities</a></li>
-    <li>&rarr; <a href="../../Utilities/parseJson/index.html" title="Utilities.parseJson (class method)">parseJson</a></li>
+    <li>&rarr; <a href="../../Utilities/parseJsonSync/index.html" title="Utilities.parseJsonSync (class method)">parseJsonSync</a></li>
 </ul>
 
 <h2 class="page-title">
-  <span class="type">class method</span> Utilities.parseJson
+  <span class="type">class method</span> Utilities.parseJsonSync
 </h2>
 
-  <p id="src_code_href"><a href="https://github.com/nodeca/nodeca-lib/blob//lib/utilities.js#L163">View source on GitHub &rarr;</a></p>
+  <p id="src_code_href"><a href="https://github.com/nodeca/nodeca-lib/blob//lib/utilities.js#L170">View source on GitHub &rarr;</a></p>
 
 
 
@@ -85,10 +85,11 @@
   </div> <!-- .section-title -->
   <div class="section-content">
     <div class="method-description">
-        <pre class="syntax"><code class="ebnf">Utilities.parseJson(str, callback) &rarr; Void</code></pre>
+        <pre class="syntax"><code class="ebnf">Utilities.parseJsonSync(str, silent) &rarr; Object|Null</code></pre>
 
 
-      <p>Safely parses given JSON <code>str</code> and fires callback with <code>err, obj</code>.</p>
+      <p>Synchronous version of <code><a href="../../Utilities/parseJson/index.html" title="Utilities.parseJson (class method)">Utilities.parseJson</a></code>. Returns <code>NULL</code> on any error
+instead of throwing exception if <code>silent</code>.</p>
       
       
 

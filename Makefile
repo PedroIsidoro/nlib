@@ -28,7 +28,7 @@ gh-pages:
 		exit 128 ; \
 		fi
 	mkdir ${TMP_DIR}
-	cp -rf doc ${TMP_DIR}
+	cp -r doc/* ${TMP_DIR}
 	cd ${TMP_DIR} && \
 		git init && \
 		git add . && \
