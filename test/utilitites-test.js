@@ -28,22 +28,40 @@ vows.describe('Utilities').addBatch({
             object_to_string: ''
           };
 
-      $$.deepMerge(a, b);
-      return a;
+      var aa = $$.deepMerge(a, b);
+      this.callback(null, a, aa);
     },
-    "non-objects are overridden": function (o) {
+    "returned object is the same as receiver": function (nil, o1, o2) {
+      assert.deepEqual(o1, o2);
+    },
+    "non-objects are overridden": function (nil, o) {
       assert.equal(o.string, 'cba');
       assert.length(o.array, 1);
       assert.include(o.array, 9);
     },
-    "and objects are merged recursively": function (o) {
+    "and objects are merged recursively": function (nil, o) {
       assert.isObject(o.inner);
       assert.equal(o.inner.string, 'abc');
       assert.equal(o.inner.number, 321);
     },
-    "only if both sides' properties are objects": function (o) {
+    "only if both sides' properties are objects": function (nil, o) {
       assert.isObject(o.string_to_object);
       assert.isString(o.object_to_string);
+    }
+  },
+  "When deepMerge'ing more than one transmitter": {
+    topic: function () {
+      var a = {inner: {a: 1, b: 1, c: 1}},
+          b = {inner: {b: 2, c: 2}},
+          c = {inner: {c: 3}};
+
+      $$.deepMerge(a, b, c);
+      return a;
+    },
+    "transmitters are merged in from left to right": function (o) {
+      assert.equal(o.inner.a, 1);
+      assert.equal(o.inner.b, 2);
+      assert.equal(o.inner.c, 3);
     }
   },
   "When grab'ing objcet's value": {
