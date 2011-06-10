@@ -1,7 +1,6 @@
 exports.Application = require('./lib/application');
 exports.Utilities = require('./lib/utilities');
 exports.Promise = require('./lib/promise');
-exports.I18n = require('./lib/i18n.js');
 
 
 ////////////////////////////////////////////////////////////////////////////////
