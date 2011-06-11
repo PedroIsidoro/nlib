@@ -1,6 +1,6 @@
 var assert = require('assert'),
     vows = require('vows'),
-    $$ = require('../lib/utilities'),
+    $$ = require('../lib/nodeca-lib/utilities'),
     helpers = require('./helpers');
 
 

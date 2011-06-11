@@ -1,6 +1,6 @@
 var assert = require('assert'),
     vows = require('vows'),
-    Promise = require('../lib/promise');
+    Promise = require('../lib/nodeca-lib/promise');
 
 
 vows.describe('Promise').addBatch({
