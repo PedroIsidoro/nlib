@@ -1,4 +1,4 @@
-.PHONY: test docs
+.PHONY: test docs gh-pages todo
 .SILENT: test docs
 
 
@@ -29,6 +29,7 @@ gh-pages:
 		fi
 	mkdir ${TMP_DIR}
 	cp -r doc/* ${TMP_DIR}
+	touch ${TMP_DIR}/.nojekyll
 	cd ${TMP_DIR} && \
 		git init && \
 		git add . && \
@@ -39,4 +40,4 @@ gh-pages:
 	rm -rf ${TMP_DIR}
 
 todo:
-	@grep 'TODO' -n -r ./lib
+	@grep 'TODO' -n -r ./app ./lib 2>/dev/null
