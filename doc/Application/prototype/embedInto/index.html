@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>nodeca-lib  v0.0.1-1fe460f API documentation | Application#init</title>
+  <title>nodeca-lib  v0.0.1-1fe460f API documentation | Application#embedInto</title>
   <meta name="generator" content="PDoc" />
   
   <script charset="utf-8" src="../../../javascripts/pdoc/prototype.js" type="text/javascript"></script>
@@ -40,8 +40,8 @@
       <div class="sidebar-pane scrollable" id="menu_pane">
         <ul class="menu-items" id="api_menu"><li><div class="menu-item"><a class="class current-parent" href="../../../Application/index.html" title="Application (class)">Application</a></div><ul><li><div class="menu-item"><a class="constructor" href="../../../Application/new/index.html" title="new Application (constructor)">new</a></div></li>
 <li><div class="menu-item"><a class="instance-method" href="../../../Application/prototype/embed/index.html" title="Application#embed (instance method)">embed</a></div></li>
-<li><div class="menu-item"><a class="instance-method" href="../../../Application/prototype/embedInto/index.html" title="Application#embedInto (instance method)">embedInto</a></div></li>
-<li><div class="menu-item"><a class="instance-method current" href="../../../Application/prototype/init/index.html" title="Application#init (instance method)">init</a></div></li>
+<li><div class="menu-item"><a class="instance-method current" href="../../../Application/prototype/embedInto/index.html" title="Application#embedInto (instance method)">embedInto</a></div></li>
+<li><div class="menu-item"><a class="instance-method" href="../../../Application/prototype/init/index.html" title="Application#init (instance method)">init</a></div></li>
 <li><div class="menu-item"><a class="instance-method" href="../../../Application/prototype/require/index.html" title="Application#require (instance method)">require</a></div></li>
 <li><div class="menu-item"><a class="instance-property" href="../../../Application/prototype/__apps__/index.html" title="Application#__apps__ (instance property)">__apps__</a></div></li>
 <li><div class="menu-item"><a class="instance-property" href="../../../Application/prototype/__config__/index.html" title="Application#__config__ (instance property)">__config__</a></div></li>
@@ -70,14 +70,14 @@
 <ul class="breadcrumbs clearfix">
   <li><a href="../../../">Home</a></li>
     <li>&rarr; <a href="../../../Application/index.html" title="Application (class)">Application</a></li>
-    <li>&rarr; <a href="../../../Application/prototype/init/index.html" title="Application#init (instance method)">init</a></li>
+    <li>&rarr; <a href="../../../Application/prototype/embedInto/index.html" title="Application#embedInto (instance method)">embedInto</a></li>
 </ul>
 
 <h2 class="page-title">
-  <span class="type">instance method</span> Application#init
+  <span class="type">instance method</span> Application#embedInto
 </h2>
 
-  <p id="src_code_href"><a href="https://github.com/nodeca/nodeca-lib/blob/1fe460f/lib/nodeca-lib/application.js#L276">View source on GitHub &rarr;</a></p>
+  <p id="src_code_href"><a href="https://github.com/nodeca/nodeca-lib/blob/1fe460f/lib/nodeca-lib/application.js#L209">View source on GitHub &rarr;</a></p>
 
 
 
@@ -88,16 +88,22 @@
   </div> <!-- .section-title -->
   <div class="section-content">
     <div class="method-description">
-        <pre class="syntax"><code class="ebnf">Application#init([config = {}]) &rarr; <a href="../../../Application/index.html" title="Application (class)">Application</a></code></pre>
+        <pre class="syntax"><code class="ebnf">Application#embedInto(superApp) &rarr; <a href="../../../Application/index.html" title="Application (class)">Application</a></code></pre>
+  <ul class="argument-list">
+      <li>
+        <code class="argument-name">superApp</code>
+          <span class="argument-types">(<code><a href="../../../Application/index.html" title="Application (class)">Application</a></code>)</span>
+         &ndash; Instance of host application to become master.
+      </li>
+  </ul> <!-- .argument-list -->
 
 
-      <p>Initializes application. You can specify <code>config</code> object to override default
-settings of <code>config/defaults.yml</code>.</p>
+      <p>Embeds application into master (host) application.</p>
 
 <h5>Throws Error</h5>
 
 <ul>
-<li>When called more than once.</li>
+<li>When application was already embeded before</li>
 </ul>
       
       
