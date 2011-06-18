@@ -64,7 +64,7 @@ vows.describe('Utilities').addBatch({
       assert.equal(o.inner.c, 3);
     }
   },
-  "When grab'ing objcet's value": {
+  "When grab'ing object's value": {
     topic: function () {
       var o = {a: 1, b: 2};
       return {o: o, b: $$.grab(o, 'b'), c: $$.grab(o, 'c')};
