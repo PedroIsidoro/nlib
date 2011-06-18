@@ -85,77 +85,66 @@ vows.describe('Utilities').addBatch({
 ).addBatch({
   "When iterating objects": {
     topic: function () {
-      var keys = [], vals = [], callback = this.callback;
+      var keys = [], vals = [];
 
-      $$.iterate({a: 1, b: 2, c: 3}, function (k, v, next) {
+      $$.each({a: 1, b: 2, c: 3}, function (k, v) {
         keys.push(k);
         vals.push(v);
-        next();
-      }, function () {
-        callback(null, keys, vals);
       });
+
+      return {keys: keys, vals: vals};
     },
-    "first argument of each() callback is property name": function (nil, keys, vals) {
-      assert.length(keys, 3);
-      assert.include(keys, 'a');
-      assert.include(keys, 'b');
-      assert.include(keys, 'c');
+    "first argument of each() callback is property name": function (result) {
+      assert.length(result.keys, 3);
+      assert.include(result.keys, 'a');
+      assert.include(result.keys, 'b');
+      assert.include(result.keys, 'c');
     },
-    "second argument of each() callback is property value": function (nil, keys, vals) {
-      assert.length(vals, 3);
-      assert.include(vals, 1);
-      assert.include(vals, 2);
-      assert.include(vals, 3);
+    "second argument of each() callback is property value": function (result) {
+      assert.length(result.vals, 3);
+      assert.include(result.vals, 1);
+      assert.include(result.vals, 2);
+      assert.include(result.vals, 3);
     }
   },
   "When iterating arrays": {
     topic: function () {
-      var idxs = [], vals = [], callback = this.callback;
+      var idxs = [], vals = [];
 
-      $$.iterate(['a', 'b', 'c'], function (i, v, next) {
+      $$.each(['a', 'b', 'c'], function (i, v) {
         idxs.push(i);
         vals.push(v);
-        next();
-      }, function () {
-        callback(null, idxs, vals);
       });
+
+      return {idxs: idxs, vals: vals};
     },
-    "first argument of each() callback is element index": function (nil, idxs, vals) {
-      assert.length(idxs, 3);
-      assert.include(idxs, 0);
-      assert.include(idxs, 1);
-      assert.include(idxs, 2);
+    "first argument of each() callback is element index": function (result) {
+      assert.length(result.idxs, 3);
+      assert.include(result.idxs, 0);
+      assert.include(result.idxs, 1);
+      assert.include(result.idxs, 2);
     },
-    "second argument of each() callback is property value": function (nil, keys, vals) {
-      assert.length(vals, 3);
-      assert.include(vals, 'a');
-      assert.include(vals, 'b');
-      assert.include(vals, 'c');
+    "second argument of each() callback is property value": function (result) {
+      assert.length(result.vals, 3);
+      assert.include(result.vals, 'a');
+      assert.include(result.vals, 'b');
+      assert.include(result.vals, 'c');
     }
   }
 }).addBatch({
-  "When exception is thrown inside iteration": {
+  "When iterator callback returns false": {
     topic: function () {
-      var callback = this.callback,
-          processed = [];
+      var processed = [];
 
-      $$.iterate([1,2,3], function (i, v, next) {
+      $$.each([1,2,3], function (i, v) {
         processed.push(v);
-
-        if (2 == v) {
-          throw Error('Should be catched');
-        }
-
-        next();
-      }, function (err) {
-        callback(null, err, processed);  
+        return false;
       });
+
+      return processed;
     },
-    "it should be catched and passed to final() callback": function (nil, err, processed) {
-      assert.instanceOf(err, Error);
-    },
-    "and iteration should be interrupted": function (nil, err, processed) {
-      assert.equal(processed.length, 2);
+    "iteration should be interrupted": function (processed) {
+      assert.equal(processed.length, 1);
     }
   }
 }).export(module);
