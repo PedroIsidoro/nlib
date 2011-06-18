@@ -28,8 +28,7 @@ vows.describe('Utilities').addBatch({
             object_to_string: ''
           };
 
-      var aa = $$.deepMerge(a, b);
-      this.callback(null, a, aa);
+      this.callback(null, a, $$.deepMerge(a, b));
     },
     "returned object is the same as receiver": function (nil, o1, o2) {
       assert.deepEqual(o1, o2);
@@ -55,13 +54,31 @@ vows.describe('Utilities').addBatch({
           b = {inner: {b: 2, c: 2}},
           c = {inner: {c: 3}};
 
-      $$.deepMerge(a, b, c);
-      return a;
+      return $$.deepMerge(a, b, c);
     },
-    "transmitters are merged in from left to right": function (o) {
+    "transmitters are merged-in from left to right": function (o) {
       assert.equal(o.inner.a, 1);
       assert.equal(o.inner.b, 2);
       assert.equal(o.inner.c, 3);
+    }
+  },
+  "When merge'ing objects": {
+    topic: function () {
+      var a = {foo: 1, inner: {foo: 1}},
+          b = {foo: 2, inner: {bar: 2}},
+          c = {inner: {bar: 3}};
+
+      this.callback(null, a, $$.merge(a, b, c));
+    },
+    "returned object is the same as receiver": function (nil, o1, o2) {
+      assert.deepEqual(o1, o2);
+    },
+    "all properties (even objects) are overridden": function (nil, o) {
+      assert.isUndefined(o.inner.foo);
+    },
+    "and transmitters are merged-in from left to right": function (nil, o) {
+      assert.equal(o.foo, 2)
+      assert.equal(o.inner.bar, 3);
     }
   },
   "When grab'ing object's value": {
