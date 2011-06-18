@@ -25,7 +25,10 @@ vows.describe('Utilities').addBatch({
               number: 321
             },
             string_to_object: {},
-            object_to_string: ''
+            object_to_string: '',
+            fn: function () {
+              return this.string;
+            }
           };
 
       this.callback(null, a, $$.deepMerge(a, b));
@@ -46,6 +49,10 @@ vows.describe('Utilities').addBatch({
     "only if both sides' properties are objects": function (nil, o) {
       assert.isObject(o.string_to_object);
       assert.isString(o.object_to_string);
+    },
+    "property descriptors are binded with correct context": function (nil, o) {
+      assert.isFunction(o.fn);
+      assert.equal(o.fn(), o.string);
     }
   },
   "When deepMerge'ing more than one transmitter": {
@@ -66,7 +73,7 @@ vows.describe('Utilities').addBatch({
     topic: function () {
       var a = {foo: 1, inner: {foo: 1}},
           b = {foo: 2, inner: {bar: 2}},
-          c = {inner: {bar: 3}};
+          c = {inner: {bar: 3}, fn: function () { return this.foo; }};
 
       this.callback(null, a, $$.merge(a, b, c));
     },
@@ -79,6 +86,10 @@ vows.describe('Utilities').addBatch({
     "and transmitters are merged-in from left to right": function (nil, o) {
       assert.equal(o.foo, 2)
       assert.equal(o.inner.bar, 3);
+    },
+    "property descriptors are binded with correct context": function (nil, o) {
+      assert.isFunction(o.fn);
+      assert.equal(o.fn(), o.foo);
     }
   },
   "When grab'ing object's value": {
