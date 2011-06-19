@@ -9,7 +9,7 @@ vows.describe('PriorityStack').addBatch({
       return Stack().unshift(0, 'c').unshift(0, 'b').unshift(0, 'a').flatten();
     },
     "given object is prepended into the priority sequence": function (arr) {
-      assert.equal(arr.length, 3);
+      assert.length(arr, 3);
       assert.equal(arr.join(''), 'abc');
     }
   },
@@ -18,7 +18,7 @@ vows.describe('PriorityStack').addBatch({
       return Stack().push(0, 'a').push(0, 'b').push(0, 'c').flatten();
     },
     "given object is prepended into the priority sequence": function (arr) {
-      assert.equal(arr.length, 3);
+      assert.length(arr, 3);
       assert.equal(arr.join(''), 'abc');
     }
   },
@@ -27,8 +27,28 @@ vows.describe('PriorityStack').addBatch({
       return Stack().push(3, 'c').push(2, 'b').push(1, 'a').flatten();
     },
     "sequences are linked with respet of their priorities": function (arr) {
-      assert.equal(arr.length, 3);
+      assert.length(arr, 3);
       assert.equal(arr.join(''), 'abc');
+    }
+  },
+  "When merging stacks": {
+    topic: function () {
+      return Stack()
+        .push(10, 'a')
+        .push(20, 'b')
+        .push(30, 'c')
+        .merge(
+          Stack()
+          .push(0, '+')
+          .push(10, '-')
+          .push(20, '-')
+          .push(40, '+')
+        )
+        .flatten();
+    },
+    "sequences are merged by pushing sequences into receiver": function (arr) {
+      assert.length(arr, 7);
+      assert.equal(arr.join(''), '+a-b-c+');
     }
   }
 }).export(module);
