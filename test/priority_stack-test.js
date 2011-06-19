@@ -30,26 +30,6 @@ vows.describe('PriorityStack').addBatch({
       assert.length(arr, 3);
       assert.equal(arr.join(''), 'abc');
     }
-  },
-  "When merging stacks": {
-    topic: function () {
-      return Stack()
-        .push(10, 'a')
-        .push(20, 'b')
-        .push(30, 'c')
-        .merge(
-          Stack()
-          .push(0, '+')
-          .push(10, '-')
-          .push(20, '-')
-          .push(40, '+')
-        )
-        .flatten();
-    },
-    "sequences are merged by pushing sequences into receiver": function (arr) {
-      assert.length(arr, 7);
-      assert.equal(arr.join(''), '+a-b-c+');
-    }
   }
 }).export(module);
 
