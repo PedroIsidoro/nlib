@@ -24,7 +24,7 @@ vows.describe('PriorityStack').addBatch({
   },
   "When stack is flatten": {
     topic: function () {
-      return Stack().push(3, 'c').push(2, 'b').push(1, 'a').flatten();
+      return Stack().push(1, 'c').push(0, 'b').push(-1, 'a').flatten();
     },
     "sequences are linked with respet of their priorities": function (arr) {
       assert.length(arr, 3);
