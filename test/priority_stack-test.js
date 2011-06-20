@@ -1,6 +1,6 @@
 var assert = require('assert'),
     vows = require('vows'),
-    Stack = require('../lib/nodeca-lib/priority_stack');
+    Stack = require('../lib/nodeca-lib/application/priority_stack');
 
 
 vows.describe('PriorityStack').addBatch({
