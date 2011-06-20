@@ -11,14 +11,14 @@ vows.describe('Application.HooksManager').addBatch({
         hooks.add('c', 10, function () {});
       }, Error);
     },
-    "adding a hook with callback which is not a funtion cause error": function (hooks) {
+    "adding a hook with handler which is not a funtion cause error": function (hooks) {
       assert.throws(function () {
         hooks.add('c', 10, null);
       }, Error);
     },
-    "running of an unknown hook cuse an error": function (hooks) {
+    "executing of an unknown hook cause an error": function (hooks) {
       assert.throws(function () {
-        hooks.run('c');
+        hooks.exec('c');
       }, Error);
     }
   },
@@ -27,7 +27,7 @@ vows.describe('Application.HooksManager').addBatch({
       var callback = this.callback,
           handler = function () { callback(null, this.foo); };
 
-      HooksManager(['a'], {foo: 'bar'}).add('a', 10, handler).run('a');
+      HooksManager(['a'], {foo: 'bar'}).add('a', 10, handler).exec('a');
     },
     "hooks are fired with it as `this` context": function (nil, foo) {
       assert.equal(foo, 'bar');
@@ -40,18 +40,18 @@ vows.describe('Application.HooksManager').addBatch({
 
       handler.foo = 'bar';
 
-      HooksManager(['a']).add('a', 10, handler).run('a');
+      HooksManager(['a']).add('a', 10, handler).exec('a');
     },
     "hooks are fired with handlers themselves as `this` context": function (nil, foo) {
       assert.equal(foo, 'bar');
     }
   },
-  "When running hook handlers": {
+  "When executing hook handlers": {
     topic: function () {
       var callback = this.callback,
           handler = function (name, foo) { callback(null, name, foo); };
 
-      HooksManager(['a']).add('a', 10, handler).run('a', 'bar');
+      HooksManager(['a']).add('a', 10, handler).exec('a', 'bar');
     },
     "handlers receive same arguments as callee": function (nil, name, foo) {
       assert.equal(name, 'a');
