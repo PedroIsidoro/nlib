@@ -3,7 +3,7 @@ var assert = require('assert'),
     Stack = require('../lib/nodeca-lib/application/priority_stack');
 
 
-vows.describe('PriorityStack').addBatch({
+vows.describe('Application.PriorityStack').addBatch({
   "When unshifting an object": {
     topic: function () {
       return Stack().unshift(0, 'c').unshift(0, 'b').unshift(0, 'a').flatten();
