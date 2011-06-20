@@ -175,6 +175,25 @@ vows.describe('Utilities').addBatch({
       assert.equal(processed.length, 1);
     }
   }
+}).addBatch({
+  "When getting values object": {
+    topic: function () {
+      var MyClass = function MyClass() {
+        this.bar = 'bar';
+      };
+
+      MyClass.prototype.foo = 'foo';
+
+      return $$.values(new MyClass());
+    },
+    "result is an array": function (arr) {
+      assert.isArray(arr);
+    },
+    "result contains values of own properties only": function (arr) {
+      assert.length(arr, 1);
+      assert.include(arr, 'bar');
+    }
+  }
 }).export(module);
 
 
