@@ -1,0 +1,13 @@
+var assert = require('assert'),
+    vows = require('vows'),
+    $$ = require('../lib/nodeca-lib/application'),
+    helpers = require('./helpers');
+
+
+vows.describe('Application').addBatch({
+}).export(module);
+
+
+////////////////////////////////////////////////////////////////////////////////
+// vim:ts=2:sw=2
+////////////////////////////////////////////////////////////////////////////////
