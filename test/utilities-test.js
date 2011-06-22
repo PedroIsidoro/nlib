@@ -106,9 +106,34 @@ vows.describe('Utilities').addBatch({
       assert.equal(r.b, 2);
     }
   }
-}).addBatch(
-  helpers.formatReaderTests('YAML', $$.readYamlSync)
-).addBatch({
+}).addBatch({
+  "Reading valid YAML file": {
+    topic: function () {
+      return $$.readYamlSync(__dirname + '/fixtures/sample-valid.yaml');
+    },
+    "should return object": function (obj) {
+      assert.isObject(obj);
+      assert.equal(obj.str, 'abc');
+      assert.equal(obj.inner.nbr, 123);
+    }
+  },
+  "Reading invalid YAML file": {
+    topic: function () {
+      return __dirname + '/fixtures/sample-invalid.yaml';
+    },
+    "should throw error": function (file) {
+      assert.throws(function () {
+        $$.readYamlSync(file);
+      }, Error);
+    },
+    "should silently return null, if silence asked": function (file) {
+      assert.doesNotThrow(function () {
+        var obj = $$.readYamlSync(file, true);
+        assert.isNull(obj);
+      }, Error);
+    }
+  }
+}).addBatch({
   "When iterating objects": {
     topic: function () {
       var keys = [], vals = [];
