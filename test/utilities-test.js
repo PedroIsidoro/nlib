@@ -1,7 +1,6 @@
 var assert = require('assert'),
     vows = require('vows'),
-    $$ = require('../lib/nodeca-lib/utilities'),
-    helpers = require('./helpers');
+    $$ = require('../lib/nodeca-lib/utilities');
 
 
 vows.describe('Utilities').addBatch({
