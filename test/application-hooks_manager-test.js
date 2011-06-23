@@ -33,19 +33,6 @@ vows.describe('Application.HooksManager').addBatch({
       assert.equal(foo, 'bar');
     }
   },
-  "When no context is given": {
-    topic: function () {
-      var callback = this.callback,
-          handler = function () { callback(null, this.foo); };
-
-      handler.foo = 'bar';
-
-      HooksManager(['a']).add('a', 10, handler).exec('a');
-    },
-    "hooks are fired with handlers themselves as `this` context": function (nil, foo) {
-      assert.equal(foo, 'bar');
-    }
-  },
   "When executing hook handlers": {
     topic: function () {
       var callback = this.callback,
