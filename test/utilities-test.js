@@ -1,5 +1,6 @@
 var assert = require('assert'),
     vows = require('vows'),
+    helpers = require('./helpers'),
     $$ = require('../lib/nodeca-lib/utilities');
 
 
@@ -216,6 +217,18 @@ vows.describe('Utilities').addBatch({
       assert.include(arr, 'bar');
     }
   }
+}).addBatch({
+  "camelCase()": helpers.buildStringManglersTest($$.camelCase, {
+    "Foo Bar": "FooBar",
+    "Foo123 Bar": "Foo123Bar",
+    "Foo ABC Bar": "FooABCBar"
+  }),
+  "splitCamelCase()": helpers.buildStringManglersTest($$.splitCamelCase, {
+    "FooBar": "Foo Bar",
+    "Foo123Bar": "Foo123 Bar",
+    "FooABCBar": "Foo ABC Bar",
+    "Foo BarBaz": "Foo Bar Baz"
+  })
 }).export(module);
 
 
