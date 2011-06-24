@@ -228,6 +228,15 @@ vows.describe('Utilities').addBatch({
     "Foo123Bar": "Foo123 Bar",
     "FooABCBar": "Foo ABC Bar",
     "Foo BarBaz": "Foo Bar Baz"
+  }),
+  "parameterize()": helpers.buildStringManglersTest($$.parameterize, {
+    "Foo Bar": "foo-bar",
+    "Foo123 Bar": "foo123-bar",
+    "Foo ABC Bar": "foo-abc-bar",
+    "FooBar": "foo-bar",
+    "Foo123Bar": "foo123-bar",
+    "FooABCBar": "foo-abc-bar",
+    "Foo BarBaz": "foo-bar-baz"
   })
 }).export(module);
 
