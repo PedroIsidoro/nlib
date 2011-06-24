@@ -7,12 +7,8 @@ exports.buildStringManglersTest = function (callback, pairs) {
 
   Object.getOwnPropertyNames(pairs).forEach(function (given) {
     var expected = pairs[given];
-
-    tests[given] = {};
-    
-    tests[given]['topic'] = callback(given);
-    tests[given]['should become ' + expected] = function (result) {
-      assert.equal(result, expected);
+    tests[given + ' -> ' + expected] = function () {
+      assert.equal(callback(given), expected);
     };
   });
 
