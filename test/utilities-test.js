@@ -1,5 +1,6 @@
 var assert = require('assert'),
     vows = require('vows'),
+    fs = require('fs'),
     helpers = require('./helpers'),
     $$ = require('../lib/nodeca-lib/utilities');
 
@@ -238,6 +239,21 @@ vows.describe('Utilities').addBatch({
     "FooABCBar": "foo-abc-bar",
     "Foo BarBaz": "foo-bar-baz"
   })
+}).addBatch({
+  "mergeBuffers()": {
+    topic: function () {
+      var a = fs.readFileSync(__dirname + '/fixtures/dummy.a'),
+          b = fs.readFileSync(__dirname + '/fixtures/dummy.b');
+
+      return $$.mergeBuffers(a, b);
+    },
+    "returns buffer with contents of given buffers merged together": function (buf) {
+      assert.equal(buf.toString(), 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя' +
+                                   'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ\n' +
+                                   'abcdefghijklmnopqrstuvwxyz' +
+                                   'ABCDEFGHIJKLMNOPQRSTUVWXYZ\n');
+    }
+  }
 }).export(module);
 
 
