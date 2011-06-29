@@ -7,14 +7,6 @@ var assert = require('assert'),
 var well_known_mimes = {
   'application/javascript':         'js',
   'application/x-shockwave-flash':  'swf',
-  'application/octet-stream':       'bin',
-
-  'audio/ogg':                      'ogg',
-  'audio/midi':                     'mid',
-  'audio/mpeg':                     'mp3',
-  'audio/webm':                     'weba',
-  'audio/x-ms-wma':                 'wma',
-  'audio/x-wav':                    'wav',
 
   'image/gif':                      'gif',
   'image/x-icon':                   'ico',
@@ -25,15 +17,7 @@ var well_known_mimes = {
 
   'text/plain':                     'txt',
   'text/css':                       'css',
-  'text/html':                      'html',
-
-  'video/x-flv':                    'flv',
-  'video/ogg':                      'ogv',
-  'video/quicktime':                'mov',
-  'video/mpeg':                     'mpg',
-  'video/x-msvideo':                'avi',
-  'video/x-ms-wmv':                 'wmv',
-  'video/webm':                     'webm'
+  'text/html':                      'html'
 };
 
 
