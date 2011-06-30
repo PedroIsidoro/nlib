@@ -254,6 +254,40 @@ vows.describe('Utilities').addBatch({
                                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ\n');
     }
   }
+}).addBatch({
+  "filewalker() with maxDepth limit": {
+    topic: function () {
+      var files = [];
+
+      $$.filewalker(__dirname + '/fixtures/files_valley', 1, function (file) {
+        files.push(file);
+      });
+
+      return files;
+    },
+    "fires callback on files found not deeper that given limit": function (files) {
+      assert.length(files, 2);
+      assert.include(files, 'a');
+      assert.include(files, 'inner/a');
+    }
+  },
+  "filewalker() without depth limits": {
+    topic: function () {
+      var files = [];
+
+      $$.filewalker(__dirname + '/fixtures/files_valley', function (file) {
+        files.push(file);
+      });
+
+      return files;
+    },
+    "fires callback on all found files": function (files) {
+      assert.length(files, 3);
+      assert.include(files, 'a');
+      assert.include(files, 'inner/a');
+      assert.include(files, 'inner/deep-inner/a');
+    }
+  }
 }).export(module);
 
 
