@@ -76,6 +76,22 @@ vows.describe('VFS').addBatch({
       assert.instanceOf(vfs.get("/b").dataUp, Buffer);
       assert.equal(vfs.get("/b").dataUp.toString(), 'DEF');
     }
+  },
+  "When find()'ing paths": {
+    topic: function () {
+       var vfs = new VFS();
+
+       vfs.add('/a.txt', new Buffer(0))
+          .add('/b.txt', new Buffer(0))
+          .add('/c.css', new Buffer(0));
+
+       return vfs.find(/\.css$/);
+    },
+    "hash of {path => object} where path matches pattern returned": function (vfs) {
+      assert.isUndefined(vfs['/a.txt']);
+      assert.isUndefined(vfs['/b.txt']);
+      assert.isObject(vfs['/c.css']);
+    }
   }
 }).export(module);
 
