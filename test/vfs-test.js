@@ -92,6 +92,19 @@ vows.describe('VFS').addBatch({
       assert.isUndefined(vfs['/b.txt']);
       assert.isObject(vfs['/c.css']);
     }
+  },
+  "Leading slash is not necessary": {
+    topic: function () {
+      return VFS().add('a').add('/b');
+    },
+    "neither when getting path": function (vfs) {
+      assert.isObject(vfs.get('/a'));
+      assert.isTrue(vfs.get('a') === vfs.get('/a'))
+    },
+    "nor when adding": function (vfs) {
+      assert.isObject(vfs.get('b'));
+      assert.isTrue(vfs.get('b') === vfs.get('/b'))
+    }
   }
 }).export(module);
 
