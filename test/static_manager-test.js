@@ -29,8 +29,8 @@ vows.describe('StaticManager').addBatch({
     topic: function () {
       var sm = new StaticManager();
 
-      sm.addPath(__dirname + '/fixtures/static/a')
-        .addPath(__dirname + '/fixtures/static/b');
+      sm.add(__dirname + '/fixtures/static/a')
+        .add(__dirname + '/fixtures/static/b');
 
       return sm.compile();
     },
@@ -46,11 +46,12 @@ vows.describe('StaticManager').addBatch({
       assert.isNull(vfs.get('/app.css.05.after'));
     },
     "and files are patched correctly": function (vfs) {
-      assert.match(vfs.get('/app.css').toString(), new RegExp(
-        '\s*/\* app.css.05.before \*/\s*' +
-        '\s*/\* app.css \*/\s' +
-        '\s*/\* app.css.05.after \*/\s*' +
-        '\s*/\* _app.css/baz.css \*/\s*'
+      var str = vfs.get('/app.css').data.toString().split('\n').join(' ');
+      assert.match(str, new RegExp(
+        'app\.css\.05\.before'    + '.*?' +
+        'app\.css'                + '.*?' +
+        'app\.css\.05\.after'     + '.*?' +
+        '_app\.css/baz\.css'
       ));
     },
   },
