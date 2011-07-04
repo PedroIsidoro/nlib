@@ -1,6 +1,7 @@
 var assert = require('assert'),
     vows = require('vows'),
     fs = require('fs'),
+    path = require('path'),
     helpers = require('./helpers'),
     $$ = require('../lib/nodeca-lib/utilities');
 
@@ -267,6 +268,24 @@ vows.describe('Utilities').addBatch({
     "returns buffer with applied unified patch": function (buf) {
       var expected = fs.readFileSync(FIXTURES + '/patch_buffer/sample.b');
       assert.equal(buf.toString(), expected.toString());
+    }
+  }
+}).addBatch({
+  "Generating temporary filename": {
+    topic: $$.tmpFilename,
+    "returns pathname that is not exists at the moment": function (file) {
+      assert.isFalse(path.existsSync(file));
+    },
+    "returns uniqe pathname each time being called": function (file) {
+      assert.notEqual(file, $$.tmpFilename());
+    },
+  },
+  "Generating temporary filename with prefix": {
+    topic: function () {
+      return $$.tmpFilename('abc');
+    },
+    "prepends filename with given prefix and a hyphen": function (file) {
+      assert.match(path.basename(file), /^abc-/);
     }
   }
 }).addBatch({
