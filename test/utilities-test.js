@@ -271,24 +271,6 @@ vows.describe('Utilities').addBatch({
     }
   }
 }).addBatch({
-  "Generating temporary filename": {
-    topic: $$.tmpFilename,
-    "returns pathname that is not exists at the moment": function (file) {
-      assert.isFalse(path.existsSync(file));
-    },
-    "returns uniqe pathname each time being called": function (file) {
-      assert.notEqual(file, $$.tmpFilename());
-    },
-  },
-  "Generating temporary filename with prefix": {
-    topic: function () {
-      return $$.tmpFilename('abc');
-    },
-    "prepends filename with given prefix and a hyphen": function (file) {
-      assert.match(path.basename(file), /^abc-/);
-    }
-  }
-}).addBatch({
   "filewalker() with maxDepth limit": {
     topic: function () {
       var files = [];
