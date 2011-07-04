@@ -5,6 +5,9 @@ var assert = require('assert'),
     $$ = require('../lib/nodeca-lib/utilities');
 
 
+var FIXTURES = __dirname + '/fixtures/utilities';
+
+
 vows.describe('Utilities').addBatch({
   "When deepMerge'ing objects": {
     topic: function () {
@@ -252,6 +255,18 @@ vows.describe('Utilities').addBatch({
                                    'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ\n' +
                                    'abcdefghijklmnopqrstuvwxyz' +
                                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ\n');
+    }
+  },
+  "patchBuffers()": {
+    topic: function () {
+      var original = fs.readFileSync(FIXTURES + '/patch_buffer/sample.a'),
+          patch = fs.readFileSync(FIXTURES + '/patch_buffer/sample.patch');
+
+      return $$.patchBuffers(original, patch);
+    },
+    "returns buffer with applied unified patch": function (buf) {
+      var expected = fs.readFileSync(FIXTURES + '/patch_buffer/sample.b');
+      assert.equal(buf.toString(), expected.toString());
     }
   }
 }).addBatch({
