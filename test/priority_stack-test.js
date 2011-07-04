@@ -1,9 +1,9 @@
 var assert = require('assert'),
     vows = require('vows'),
-    Stack = require('../lib/nodeca-lib/application/priority_stack');
+    Stack = require('../lib/nodeca-lib/priority_stack');
 
 
-vows.describe('Application.PriorityStack').addBatch({
+vows.describe('PriorityStack').addBatch({
   "When pushing an object": {
     topic: function () {
       return Stack().push(0, 'a').push(0, 'b').push(0, 'c').flatten();
