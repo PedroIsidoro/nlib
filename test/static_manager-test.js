@@ -4,6 +4,9 @@ var assert = require('assert'),
     StaticManager = require('../lib/nodeca-lib/static_manager');
 
 
+var FIXTURES = __dirname + '/fixtures/static_manager';
+
+
 var testRealpathParser = function testRealpathParser(map) {
   var tests = {};
   
@@ -29,8 +32,8 @@ vows.describe('StaticManager').addBatch({
     topic: function () {
       var sm = new StaticManager();
 
-      sm.add(__dirname + '/fixtures/static/a')
-        .add(__dirname + '/fixtures/static/b');
+      sm.add(FIXTURES + '/pub_1')
+        .add(FIXTURES + '/pub_2');
 
       return sm.compile();
     },
@@ -53,7 +56,7 @@ vows.describe('StaticManager').addBatch({
         'app\.css\.05\.after'     + '.*?' +
         '_app\.css/baz\.css'
       ));
-    },
+    }
   },
   "When parsing file paths": testRealpathParser({
     'app.css':                ['app.css', 'override', null],

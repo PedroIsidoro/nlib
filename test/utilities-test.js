@@ -246,8 +246,8 @@ vows.describe('Utilities').addBatch({
 }).addBatch({
   "mergeBuffers()": {
     topic: function () {
-      var a = fs.readFileSync(__dirname + '/fixtures/dummy.a'),
-          b = fs.readFileSync(__dirname + '/fixtures/dummy.b');
+      var a = fs.readFileSync(FIXTURES + '/merge_buffers/dummy.a'),
+          b = fs.readFileSync(FIXTURES + '/merge_buffers/dummy.b');
 
       return $$.mergeBuffers(a, b);
     },
@@ -276,7 +276,7 @@ vows.describe('Utilities').addBatch({
     topic: function () {
       var files = [];
 
-      $$.filewalker(__dirname + '/fixtures/files_valley', 1, function (file) {
+      $$.filewalker(FIXTURES + '/filewalker', 1, function (file) {
         files.push(file);
       });
 
@@ -292,7 +292,7 @@ vows.describe('Utilities').addBatch({
     topic: function () {
       var files = [];
 
-      $$.filewalker(__dirname + '/fixtures/files_valley', function (file) {
+      $$.filewalker(FIXTURES + '/filewalker', function (file) {
         files.push(file);
       });
 
