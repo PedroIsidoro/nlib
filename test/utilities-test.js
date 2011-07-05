@@ -261,9 +261,10 @@ vows.describe('Utilities').addBatch({
   "patchBuffers()": {
     topic: function () {
       var original = fs.readFileSync(FIXTURES + '/patch_buffer/sample.a'),
-          patch = fs.readFileSync(FIXTURES + '/patch_buffer/sample.patch');
+          patch_10 = fs.readFileSync(FIXTURES + '/patch_buffer/sample.10.patch'),
+          patch_20 = fs.readFileSync(FIXTURES + '/patch_buffer/sample.20.patch');
 
-      return $$.patchBuffers(original, patch);
+      return $$.patchBuffers(original, patch_10, patch_20);
     },
     "returns buffer with applied unified patch": function (buf) {
       var expected = fs.readFileSync(FIXTURES + '/patch_buffer/sample.b');
