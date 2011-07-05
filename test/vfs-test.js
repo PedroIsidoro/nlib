@@ -14,8 +14,8 @@ vows.describe('VFS').addBatch({
       return vfs;
     },
     "has data buffer": function (vfs) {
-      assert.instanceOf(vfs.get("/a.txt").data, Buffer);
-      assert.instanceOf(vfs.get("/b").data, Buffer);
+      assert.instanceOf(vfs.get("/a.txt").buffer, Buffer);
+      assert.instanceOf(vfs.get("/b").buffer, Buffer);
     },
     "and mime type, found by it's extension": function (vfs) {
       assert.equal(vfs.get('/a.txt').mime, 'text/plain');
@@ -61,20 +61,20 @@ vows.describe('VFS').addBatch({
       var vfs = new VFS();
 
       vfs.add('/a', new Buffer('abc'));
-      vfs.plugin(function raiser(path, obj) {
-        obj.dataUp = new Buffer(obj.data.toString().toUpperCase());
+      vfs.plugin(function raiser(path, data) {
+        data.buffer.upcase = new Buffer(data.buffer.toString().toUpperCase());
       });
       vfs.add('/b', new Buffer('def'));
 
       return vfs;
     },
     "plugin is called for all already registered paths": function (vfs) {
-      assert.instanceOf(vfs.get("/a").dataUp, Buffer);
-      assert.equal(vfs.get("/a").dataUp.toString(), 'ABC');
+      assert.instanceOf(vfs.get("/a").buffer.upcase, Buffer);
+      assert.equal(vfs.get("/a").buffer.upcase.toString(), 'ABC');
     },
     "plugin is called for all newly registered paths": function (vfs) {
-      assert.instanceOf(vfs.get("/b").dataUp, Buffer);
-      assert.equal(vfs.get("/b").dataUp.toString(), 'DEF');
+      assert.instanceOf(vfs.get("/b").buffer.upcase, Buffer);
+      assert.equal(vfs.get("/b").buffer.upcase.toString(), 'DEF');
     }
   },
   "When find()'ing paths": {

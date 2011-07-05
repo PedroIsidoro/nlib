@@ -49,7 +49,7 @@ vows.describe('StaticManager').addBatch({
       assert.isNull(vfs.get('/app.css.05.after'));
     },
     "and files are patched correctly": function (vfs) {
-      var str = vfs.get('/app.css').data.toString().split('\n').join(' ');
+      var str = vfs.get('/app.css').buffer.toString().split('\n').join(' ');
       assert.match(str, new RegExp(
         'app\.css\.05\.before'    + '.*?' +
         'app\.css'                + '.*?' +
