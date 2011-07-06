@@ -57,15 +57,17 @@ vows.describe('StaticManager').addBatch({
         '_app\.css/baz\.css'
       ));
     },
-    "styl files are compield into css": function (vfs) {
+    "styl files are replaced with css": function (vfs) {
       assert.isObject(vfs.get('/demo.css'));
+      assert.isNull(vfs.get('/demo.styl'));
+    },
+    "styl files are compield into css": function (vfs) {
+      var str = vfs.get('/demo.css').buffer.toString().split('\n').join(' ');
+      assert.match(str, /body.*{.*color.*}/);
     },
     "styl files works with vfs during it's compilation": function (vfs) {
-      assert.isTrue(1 < vfs.get('/demo.css').buffer.toString().length);
-    },
-    "resulting csss files are compressed": function (vfs) {
       var str = vfs.get('/demo.css').buffer.toString().split('\n').join(' ');
-      assert.match(str, /body{color:#000}/);
+      assert.match(str, /#000/);
     }
   },
   "When parsing file paths": testRealpathParser({

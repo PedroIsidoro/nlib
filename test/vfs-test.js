@@ -79,13 +79,13 @@ vows.describe('VFS').addBatch({
   },
   "When find()'ing paths": {
     topic: function () {
-       var vfs = new VFS();
+      var vfs = new VFS();
 
-       vfs.add('/a.txt', new Buffer(0))
-          .add('/b.txt', new Buffer(0))
-          .add('/c.css', new Buffer(0));
+      vfs.add('/a.txt', new Buffer(0))
+         .add('/b.txt', new Buffer(0))
+         .add('/c.css', new Buffer(0));
 
-       return vfs.find(/\.css$/);
+      return vfs.find(/\.css$/);
     },
     "hash of {path => object} where path matches pattern returned": function (vfs) {
       assert.isUndefined(vfs['/a.txt']);
@@ -104,6 +104,43 @@ vows.describe('VFS').addBatch({
     "nor when adding": function (vfs) {
       assert.isObject(vfs.get('b'));
       assert.isTrue(vfs.get('b') === vfs.get('/b'))
+    }
+  },
+  "#each()": {
+    topic: function () {
+      var vfs = new VFS();
+
+      vfs.add('/a.txt', new Buffer(0))
+         .add('/b.txt', new Buffer(0))
+         .add('/c.css', new Buffer(0));
+
+      return vfs;
+    },
+    "with pattern given": {
+      topic: function (vfs) {
+        var counts = [0, 0];
+
+        vfs.each(/\.txt/, function () { counts[0]++; });
+        vfs.each(/\.css$/, function () { counts[1]++; });
+
+        return counts;
+      },
+      "iterates through each element of VFS matching given pattern": function (counts) {
+        assert.equal(counts[0], 2);
+        assert.equal(counts[1], 1);
+      }
+    },
+    "without any pattern given": {
+      topic: function (vfs) {
+        var count = 0;
+
+        vfs.each(function () { count++; });
+
+        return count;
+      },
+      "iterates through ALL elements of VFS": function (count) {
+        assert.equal(count, 3);
+      }
     }
   }
 }).export(module);
