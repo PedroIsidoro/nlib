@@ -77,6 +77,24 @@ vows.describe('VFS').addBatch({
       assert.equal(vfs.get("/b").buffer.upcase.toString(), 'DEF');
     }
   },
+  "When using plugin with pattern argument": {
+    topic: function () {
+      var vfs = new VFS();
+
+      vfs.add('/a.foo', new Buffer('abc'));
+      vfs.add('/b.txt', new Buffer('def'));
+
+      vfs.plugin(/\.foo$/, function (path, data) {
+        data.buffer.upcase = new Buffer(data.buffer.toString().toUpperCase());
+      });
+
+      return vfs;
+    },
+    "plugin is applied for matching paths only": function (vfs) {
+      assert.instanceOf(vfs.get("/a.foo").buffer.upcase, Buffer);
+      assert.isUndefined(vfs.get("/b.txt").buffer.upcase);
+    }
+  },
   "When find()'ing paths": {
     topic: function () {
       var vfs = new VFS();
