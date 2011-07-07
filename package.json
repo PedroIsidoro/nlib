@@ -9,6 +9,7 @@
   {
     "express-railer": "https://github.com/nodeca/express-railer/tarball/master",
     "express": ">= 2.3.4",
+    "compress-buffer": ">= 0.3.0",
     "stylus": ">= 0.13.5",
     "yaml": ">= 0.2.1"
   },
