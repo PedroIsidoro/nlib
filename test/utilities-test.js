@@ -74,6 +74,18 @@ vows.describe('Utilities').addBatch({
       assert.equal(o.inner.c, 3);
     }
   },
+  "When deepMerge()'ing": {
+    topic: function () {
+      var a,
+          b = null,
+          c = {foo: 123};
+
+      return $$.deepMerge({}, a, b, c);
+    },
+    "only valuable transmitters are considered": function (o) {
+      assert.equal(o.foo, 123);
+    }
+  },
   "When merge'ing objects": {
     topic: function () {
       var a = {foo: 1, inner: {foo: 1}},
@@ -83,7 +95,7 @@ vows.describe('Utilities').addBatch({
       this.callback(null, a, $$.merge(a, b, c));
     },
     "returned object is the same as receiver": function (nil, o1, o2) {
-      assert.deepEqual(o1, o2);
+      assert.isTrue(o1 === o2);
     },
     "all properties (even objects) are overridden": function (nil, o) {
       assert.isUndefined(o.inner.foo);
@@ -95,6 +107,18 @@ vows.describe('Utilities').addBatch({
     "property descriptors are binded with correct context": function (nil, o) {
       assert.isFunction(o.fn);
       assert.equal(o.fn(), o.foo);
+    }
+  },
+  "When merging()'ing": {
+    topic: function () {
+      var a,
+          b = null,
+          c = {foo: 123};
+
+      return $$.merge({}, a, b, c);
+    },
+    "only valuable transmitters are considered": function (o) {
+      assert.equal(o.foo, 123);
     }
   },
   "When grab'ing object's value": {
