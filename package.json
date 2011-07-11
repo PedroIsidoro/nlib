@@ -12,6 +12,7 @@
     "express": ">= 2.3.4",
     "compress-buffer": ">= 0.3.0",
     "uglify-js": ">= 1.0.4",
+    "jade": ">= 0.12.4",
     "stylus": ">= 0.13.5",
     "yaml": ">= 0.2.1"
   },
