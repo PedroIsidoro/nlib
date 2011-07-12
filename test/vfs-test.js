@@ -27,33 +27,22 @@ vows.describe('VFS').addBatch({
   "When path exists": {
     topic: function () {
       var vfs = new VFS();
-      vfs.add('/a', new Buffer(0));
+
+      vfs.add('/a', new Buffer('abc'));
+      vfs.get('/a').first = true;
+      vfs.add('/a', new Buffer('123'));
+
       return vfs;
     },
-    "add() same path throws Error": function (vfs) {
-      assert.throws(function () { vfs.add('/a', new Buffer(0)); }, Error);
+    "add() overwrites old element": function (vfs) {
+      assert.equal(vfs.get('a').buffer.toString(), '123');
+      assert.isUndefined(vfs.get('a').first);
     }
   },
   "When path does not exists": {
     topic: new VFS(),
     "get() returns null": function (vfs) {
       assert.isNull(vfs.get('/not/found'));
-    }
-  },
-  "When path is renamed": {
-    topic: function () {
-      var vfs = new VFS();
-
-      vfs.add('/a', new Buffer('abc'));
-      vfs.rename('/a', '/b');
-
-      return vfs;
-    },
-    "old path is dropped": function (vfs) {
-      assert.isNull(vfs.get('/a'));
-    },
-    "object become accessible by new path only": function (vfs) {
-      assert.isObject(vfs.get('/b'));
     }
   },
   "When using plugin": {
@@ -93,22 +82,6 @@ vows.describe('VFS').addBatch({
     "plugin is applied for matching paths only": function (vfs) {
       assert.instanceOf(vfs.get("/a.foo").buffer.upcase, Buffer);
       assert.isUndefined(vfs.get("/b.txt").buffer.upcase);
-    }
-  },
-  "When find()'ing paths": {
-    topic: function () {
-      var vfs = new VFS();
-
-      vfs.add('/a.txt', new Buffer(0))
-         .add('/b.txt', new Buffer(0))
-         .add('/c.css', new Buffer(0));
-
-      return vfs.find(/\.css$/);
-    },
-    "hash of {path => object} where path matches pattern returned": function (vfs) {
-      assert.isUndefined(vfs['/a.txt']);
-      assert.isUndefined(vfs['/b.txt']);
-      assert.isObject(vfs['/c.css']);
     }
   },
   "Leading slash is not necessary": {
