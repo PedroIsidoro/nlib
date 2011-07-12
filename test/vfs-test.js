@@ -113,7 +113,8 @@ vows.describe('VFS').addBatch({
   },
   "Leading slash is not necessary": {
     topic: function () {
-      return VFS().add('a').add('/b');
+      var buf = new Buffer(0);
+      return VFS().add('a', buf).add('/b', buf);
     },
     "neither when getting path": function (vfs) {
       assert.isObject(vfs.get('/a'));
