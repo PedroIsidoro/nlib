@@ -9,11 +9,10 @@
   {
     "mongoose": ">= 1.4.0",
     "express-railer": "https://github.com/nodeca/express-railer/tarball/master",
+    "assets-builder": "https://github.com/nodeca/assets-bulder/tarball/master",
+    "static-lulz": "https://github.com/nodeca/static-lulz/tarball/master",
     "express": ">= 2.3.4",
-    "compress-buffer": ">= 0.3.0",
-    "uglify-js": ">= 1.0.4",
     "jade": ">= 0.12.4",
-    "stylus": ">= 0.13.5",
     "yaml": ">= 0.2.1"
   },
   "dev-dependencies":
