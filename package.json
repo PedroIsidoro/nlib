@@ -9,8 +9,9 @@
   {
     "mongoose": ">= 1.4.0",
     "express-railer": "https://github.com/nodeca/express-railer/tarball/master",
-    "assets-builder": "https://github.com/nodeca/assets-bulder/tarball/master",
+    "assets-builder": "https://github.com/nodeca/assets-builder/tarball/master",
     "static-lulz": "https://github.com/nodeca/static-lulz/tarball/master",
+    "simple-promise": "https://github.com/nodeca/simple-promise/tarball/master",
     "express": ">= 2.3.4",
     "jade": ">= 0.12.4",
     "yaml": ">= 0.2.1"
