@@ -12,9 +12,9 @@
     "assets-builder": "https://github.com/nodeca/assets-builder/tarball/master",
     "static-lulz": "https://github.com/nodeca/static-lulz/tarball/master",
     "simple-promise": "https://github.com/nodeca/simple-promise/tarball/master",
+    "yaml": "https://github.com/nodeca/js-yaml/tarball/master",
     "express": ">= 2.3.4",
     "jade": ">= 0.12.4",
-    "yaml": ">= 0.2.1",
     "winston": ">= 0.3.3"
   },
   "dev-dependencies":
