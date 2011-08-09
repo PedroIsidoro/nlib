@@ -7,15 +7,15 @@
   "main": "index.js",
   "dependencies":
   {
+    "winston": ">= 0.3.3",
     "mongoose": ">= 1.4.0",
+    "jade": ">= 0.12.4",
+    "express": ">= 2.3.4",
     "express-railer": "https://github.com/nodeca/express-railer/tarball/master",
+    "simple-promise": "https://github.com/nodeca/simple-promise/tarball/master",
     "assets-builder": "https://github.com/nodeca/assets-builder/tarball/master",
     "static-lulz": "https://github.com/nodeca/static-lulz/tarball/master",
-    "simple-promise": "https://github.com/nodeca/simple-promise/tarball/master",
-    "yaml": "https://github.com/nodeca/js-yaml/tarball/master",
-    "express": ">= 2.3.4",
-    "jade": ">= 0.12.4",
-    "winston": ">= 0.3.3"
+    "yaml": "https://github.com/nodeca/js-yaml/tarball/master"
   },
   "dev-dependencies":
   {
