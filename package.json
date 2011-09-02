@@ -8,7 +8,7 @@
   "dependencies":
   {
     "winston": ">= 0.3.3",
-    "mongoose": ">= 1.4.0",
+    "mongoose": ">= 2.1.0",
     "jade": ">= 0.12.4",
     "express": ">= 2.3.4",
     "express-railer": "https://github.com/nodeca/express-railer/tarball/master",
