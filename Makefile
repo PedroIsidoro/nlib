@@ -39,4 +39,4 @@ gh-pages:
 	rm -rf ${TMP_DIR}
 
 todo:
-	@grep 'TODO' -n -r ./app ./lib 2>/dev/null
+	@grep 'TODO' -n -r ./app ./lib 2>/dev/null || test true
