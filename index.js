@@ -1,1 +1,1 @@
-module.exports = require('./lib/nodeca_lib');
+module.exports = require('./lib/nodeca-lib');
