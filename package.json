@@ -7,22 +7,22 @@
   "main": "index.js",
   "dependencies":
   {
-    "winston": ">= 0.3.3",
-    "mongoose": ">= 2.1.0",
-    "jade": ">= 0.12.4",
-    "express": ">= 2.3.4",
-    "underscore": ">= 1.1.7",
-    "underscore.string": ">= 1.1.6",
+    "winston": "0.3.3",
+    "mongoose": "2.1.0",
+    "jade": "0.12.4",
+    "express": "2.3.4",
+    "underscore": "1.1.7",
+    "underscore.string": "1.1.6",
     "express-railer": "https://github.com/nodeca/express-railer/tarball/master",
     "simple-promise": "https://github.com/nodeca/simple-promise/tarball/master",
     "assets-builder": "https://github.com/nodeca/assets-builder/tarball/master",
     "static-lulz": "https://github.com/nodeca/static-lulz/tarball/master",
     "yaml": "https://github.com/nodeca/js-yaml/tarball/master",
-    "uglify-js": ">= 1.0.4",
-    "stylus": ">= 0.13.5"
+    "uglify-js": "1.0.4",
+    "stylus": "0.13.5"
   },
   "dev-dependencies":
   {
-    "vows": ">= 0.5.8"
+    "vows": "0.5.8"
   }
 }
