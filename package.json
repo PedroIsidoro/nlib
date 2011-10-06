@@ -17,7 +17,8 @@
     "simple-promise": "https://github.com/nodeca/simple-promise/tarball/master",
     "assets-builder": "https://github.com/nodeca/assets-builder/tarball/master",
     "static-lulz": "https://github.com/nodeca/static-lulz/tarball/master",
-    "yaml": "https://github.com/nodeca/js-yaml/tarball/master",
+    "fs-tools": "https://github.com/nodeca/fs-tools/tarball/master",
+    "js-yaml": "https://github.com/nodeca/js-yaml/tarball/master",
     "uglify-js": "1.0.4",
     "stylus": "0.13.5"
   },
