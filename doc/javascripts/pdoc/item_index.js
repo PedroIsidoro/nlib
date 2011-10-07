@@ -42,7 +42,7 @@ PDoc.elements = {
 'PriorityStack#flatten': { 'name': 'PriorityStack#flatten', 'type': 'instance method', 'path': 'PriorityStack/prototype/flatten/index.html' },
 'Application': { 'name': 'Application', 'type': 'class', 'path': 'Application/index.html' },
 'new Application': { 'name': 'new Application', 'type': 'constructor', 'path': 'Application/new/index.html' },
-'Application#dirname': { 'name': 'Application#dirname', 'type': 'instance property', 'path': 'Application/prototype/dirname/index.html' },
+'Application#root': { 'name': 'Application#root', 'type': 'instance property', 'path': 'Application/prototype/root/index.html' },
 'Application#name': { 'name': 'Application#name', 'type': 'instance property', 'path': 'Application/prototype/name/index.html' },
 'Application#config': { 'name': 'Application#config', 'type': 'instance property', 'path': 'Application/prototype/config/index.html' },
 'Application#bootstrap': { 'name': 'Application#bootstrap', 'type': 'instance method', 'path': 'Application/prototype/bootstrap/index.html' },
