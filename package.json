@@ -19,6 +19,7 @@
     "static-lulz": "https://github.com/nodeca/static-lulz/tarball/master",
     "fs-tools": "https://github.com/nodeca/fs-tools/tarball/master",
     "js-yaml": "https://github.com/nodeca/js-yaml/tarball/master",
+    "yaml": "0.2.2",
     "uglify-js": "1.0.4",
     "stylus": "0.13.5"
   },
