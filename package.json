@@ -25,6 +25,7 @@
   },
   "dev-dependencies":
   {
-    "vows": "0.5.8"
+    "vows": "0.5.8",
+    "ndoc": "0.1.1"
   }
 }
