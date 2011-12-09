@@ -20,7 +20,7 @@ test:
 	NODE_ENV=test vows --spec
 
 docs:
-	./support/generate-docs.rb
+	rm -fr doc && ndoc lib
 
 gh-pages:
 	@if test -z ${REMOTE_REPO} ; then \
