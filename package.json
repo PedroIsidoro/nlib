@@ -1,31 +1,27 @@
 {
-  "name": "nodeca-lib",
-  "description": "Core nodeca libraries and tools",
-  "version": "0.0.1",
-  "author": "Aleksey V Zapparov <ixti@member.fsf.org> (http://ixti.ru)",
-  "repository": "git://github.com/nodeca/nodeca-lib",
-  "main": "index.js",
-  "dependencies":
-  {
-    "winston": "0.3.3",
-    "mongoose": "2.1.0",
-    "jade": "0.12.4",
-    "express": "2.3.4",
-    "underscore": "1.1.7",
-    "underscore.string": "1.1.6",
-    "express-railer": "https://github.com/nodeca/express-railer/tarball/master",
-    "simple-promise": "https://github.com/nodeca/simple-promise/tarball/master",
-    "assets-builder": "https://github.com/nodeca/assets-builder/tarball/master",
-    "static-lulz": "https://github.com/nodeca/static-lulz/tarball/master",
-    "fs-tools": "https://github.com/nodeca/fs-tools/tarball/master",
-    "js-yaml": "https://github.com/nodeca/js-yaml/tarball/master",
-    "yaml": "0.2.2",
-    "uglify-js": "1.0.4",
-    "stylus": "0.13.5"
-  },
-  "dev-dependencies":
-  {
-    "vows": "0.5.8",
-    "ndoc": "0.1.1"
-  }
+  "name"            : "nodeca-lib",
+  "description"     : "Core nodeca libraries and tools",
+  "version"         : "0.0.1",
+  "author"          : "Aleksey V Zapparov <ixti@member.fsf.org> (http://ixti.ru)",
+  "repository"      : {
+                        "type": "git",
+                        "url" : "git://github.com/nodeca/nodeca-lib"
+                      },
+  "main"            : "./index.js",
+  "dependencies"    : {
+                        "js-yaml"           : "0.3.5",
+                        "underscore"        : "1.2.4",
+                        "underscore.string" : "2.0.0",
+                        "fs-tools"          : "0.1.0",
+                        "winston"           : "0.5.9",
+
+                        "strata"            : "0.10.1",
+                        "socket.io"         : "0.8.7",
+
+                        "jade"              : "0.20.0",
+                        "stylus"            : "0.22.2"
+                      },
+  "devDependencies" : {
+                        "vows": "0.6.0"
+                      }
 }
