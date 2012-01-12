@@ -36,7 +36,7 @@ doc:
 		exit 128 ; \
 		fi
 	rm -rf ./doc
-	ndoc --output ./doc --linkFormat "${SRC_URL_FMT}" ./server
+	ndoc --output ./doc --linkFormat "${SRC_URL_FMT}" ./lib
 
 dev-deps:
 	@if test ! `which npm` ; then \
