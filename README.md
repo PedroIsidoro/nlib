@@ -8,4 +8,4 @@ move it to separate micromodule after stabilization.
 This module is also responsible for syndication all Nodeca dependencies (to simplify template
 of main & each subproject).
 
-See docs for details: http://nodeca.github.com/nodeca-lib/
+See docs for details: http://nodeca.github.com/nlib/
