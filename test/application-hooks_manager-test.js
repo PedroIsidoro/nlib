@@ -1,3 +1,6 @@
+'use strict';
+
+
 var assert = require('assert'),
     vows = require('vows'),
     HooksManager = require('../lib/nodeca-lib/application/hooks_manager');
@@ -27,7 +30,7 @@ vows.describe('Application.HooksManager').addBatch({
       var callback = this.callback,
           handler = function () { callback(null, this.foo); };
 
-      HooksManager(['a'], {foo: 'bar'}).add('a', 10, handler).exec('a');
+      HooksManager.create(['a'], {foo: 'bar'}).add('a', 10, handler).exec('a');
     },
     "hooks are fired with it as `this` context": function (nil, foo) {
       assert.equal(foo, 'bar');
@@ -38,7 +41,7 @@ vows.describe('Application.HooksManager').addBatch({
       var callback = this.callback,
           handler = function (name, foo) { callback(null, name, foo); };
 
-      HooksManager(['a']).add('a', 10, handler).exec('a', 'bar');
+      HooksManager.create(['a']).add('a', 10, handler).exec('a', 'bar');
     },
     "handlers receive same arguments as callee": function (nil, name, foo) {
       assert.equal(name, 'a');

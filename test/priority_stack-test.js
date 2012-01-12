@@ -1,3 +1,6 @@
+'use strict';
+
+
 var assert = require('assert'),
     vows = require('vows'),
     Stack = require('../lib/nodeca-lib/priority_stack');
