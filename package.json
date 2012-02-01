@@ -9,7 +9,7 @@
                       },
   "main"            : "./index.js",
   "dependencies"    : {
-                        "types"             : "0.0.1",
+                        "types"             : "git://github.com/nodeca/types.git",
                         "js-yaml"           : "0.3.5",
                         "async"             : "0.1.15",
                         "underscore"        : "1.2.4",
