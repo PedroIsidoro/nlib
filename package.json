@@ -17,6 +17,7 @@
                         "fs-tools"          : "0.1.0",
                         "winston"           : "0.5.9",
                         "connect"           : "git://github.com/senchalabs/connect.git",
+                        "JASON"             : "0.1.1",
 
                         "jade"              : "0.20.0",
                         "stylus"            : "0.22.2"
