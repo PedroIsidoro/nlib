@@ -23,7 +23,8 @@
                         "babelfish"         : "git://github.com/nodeca/babelfish.git",
 
                         "jade"              : "0.20.0",
-                        "stylus"            : "0.22.2"
+                        "stylus"            : "0.22.2",
+                        "uglify-js"         : "1.2.5"
                       },
   "devDependencies" : {
                         "vows": "0.6.0"
