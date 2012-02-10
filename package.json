@@ -19,7 +19,6 @@
                         "connect"           : "git://github.com/senchalabs/connect.git",
                         "JASON"             : "0.1.1",
                         "crossroads"        : "0.7.0",
-                        "static-lulz"       : "git://github.com/nodeca/static-lulz.git",
                         "babelfish"         : "git://github.com/nodeca/babelfish.git",
 
                         "jade"              : "0.20.0",
