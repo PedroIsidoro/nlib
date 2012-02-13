@@ -5,7 +5,7 @@
   "author"          : "Aleksey V Zapparov <ixti@member.fsf.org> (http://ixti.ru)",
   "repository"      : {
                         "type": "git",
-                        "url" : "git://github.com/nodeca/nodeca-lib"
+                        "url" : "git://github.com/nodeca/nlib"
                       },
   "main"            : "./index.js",
   "dependencies"    : {
