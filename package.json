@@ -16,7 +16,6 @@
                         "underscore.string" : "2.0.0",
                         "fs-tools"          : "git://github.com/nodeca/fs-tools.git",
                         "winston"           : "0.5.9",
-                        "connect"           : "git://github.com/senchalabs/connect.git",
                         "JASON"             : "0.1.1",
                         "crossroads"        : "0.7.0",
                         "babelfish"         : "git://github.com/nodeca/babelfish.git",
