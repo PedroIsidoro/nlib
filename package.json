@@ -17,7 +17,9 @@
                         "fs-tools"          : "git://github.com/nodeca/fs-tools.git",
                         "winston"           : "0.5.9",
                         "JASON"             : "0.1.1",
-                        "crossroads"        : "0.7.0",
+                        "redis"             : "0.7.1",
+                        "mongoose"          : "2.5.9",
+                        "pointer"           : "git://github.com/nodeca/pointer.git",
                         "babelfish"         : "git://github.com/nodeca/babelfish.git",
 
                         "jade"              : "0.20.0",
