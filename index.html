@@ -1,0 +1,599 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>nlib 0.0.1 API documentation</title><meta name="generator" content="ndoc"><meta name="description" content=""><meta name="author" content=""><meta name="viewport" content="width=device-width,initial-scale=1"><!-- CSS--><link rel="stylesheet" href="stylesheets/main.css"><!-- end CSS--><script src="javascripts/modernizr-2.0.6.min.js"></script></head><body><nav class="sidebar"><form id="search"><input type="search" size="20" title="Search" placeholder="Search"/></form><ul id="search-results" class="menu"></ul><ul class="menu"><li><div class="menu-item"><a href="#Application" class="class" title="Application (class)" data-id="Application">Application</a></div><ul class=""><li><div class="menu-item"><a href="#Application.new" class="constructor" title="new Application (constructor)" data-id="new Application">new</a></div></li><li><div class="menu-item"><a href="#Application.Initializer" class="namespace internal" title="Application.Initializer (namespace)" data-id="Application.Initializer">Application.Initializer</a></div><ul class=""><li><div class="menu-item"><a href="#Application.Initializer.initialize" class="class-method internal" title="Application.Initializer.initialize (class method)" data-id="Application.Initializer.initialize">initialize</a></div></li><li><div class="menu-item"><a href="#Application.Initializer.preload" class="class-method internal" title="Application.Initializer.preload (class method)" data-id="Application.Initializer.preload">preload</a></div></li></ul></li><li><div class="menu-item"><a href="#Application.StaticBundler" class="namespace internal" title="Application.StaticBundler (namespace)" data-id="Application.StaticBundler">Application.StaticBundler</a></div><ul class=""><li><div class="menu-item"><a href="#Application.StaticBundler.bundle" class="class-method" title="Application.StaticBundler.bundle (class method)" data-id="Application.StaticBundler.bundle">bundle</a></div></li></ul></li><li><div class="menu-item"><a href="#Application.create" class="class-method" title="Application.create (class method)" data-id="Application.create">create</a></div></li><li><div class="menu-item"><a href="#Application.env" class="class-property" title="Application.env (class property)" data-id="Application.env">env</a></div></li><li><div class="menu-item"><a href="#Application.prototype.bootstrap" class="instance-method" title="Application#bootstrap (instance method)" data-id="Application#bootstrap">bootstrap</a></div></li><li><div class="menu-item"><a href="#Application.prototype.run" class="instance-method" title="Application#run (instance method)" data-id="Application#run">run</a></div></li><li><div class="menu-item"><a href="#Application.prototype.name" class="instance-property readonly" title="Application#name (instance property)" data-id="Application#name">name</a></div></li><li><div class="menu-item"><a href="#Application.prototype.root" class="instance-property readonly" title="Application#root (instance property)" data-id="Application#root">root</a></div></li></ul></li><li><div class="menu-item"><a href="#NLib" class="namespace" title="NLib (namespace)" data-id="NLib">NLib</a></div><ul class=""><li><div class="menu-item"><a href="#NLib.Vendor" class="namespace" title="NLib.Vendor (namespace)" data-id="NLib.Vendor">NLib.Vendor</a></div><ul class=""><li><div class="menu-item"><a href="#NLib.Vendor.Async" class="namespace" title="NLib.Vendor.Async (namespace)" data-id="NLib.Vendor.Async">NLib.Vendor.Async</a></div></li><li><div class="menu-item"><a href="#NLib.Vendor.FsTools" class="namespace" title="NLib.Vendor.FsTools (namespace)" data-id="NLib.Vendor.FsTools">NLib.Vendor.FsTools</a></div></li><li><div class="menu-item"><a href="#NLib.Vendor.Underscore" class="namespace" title="NLib.Vendor.Underscore (namespace)" data-id="NLib.Vendor.Underscore">NLib.Vendor.Underscore</a></div></li></ul></li></ul></li><li><div class="menu-item"><a href="#nodeca" class="namespace" title="nodeca (namespace)" data-id="nodeca">nodeca</a></div><ul class=""><li><div class="menu-item"><a href="#nodeca.filter" class="class-property" title="nodeca.filter (class property)" data-id="nodeca.filter">filter</a></div></li></ul></li><li><div class="menu-item"><a href="#Permission" class="class" title="Permission (class)" data-id="Permission">Permission</a></div><ul class=""><li><div class="menu-item"><a href="#Permission.new" class="constructor" title="new Permission (constructor)" data-id="new Permission">new</a></div></li><li><div class="menu-item"><a href="#Permission.Test" class="class internal" title="Permission.Test (class)" data-id="Permission.Test">Permission.Test</a></div><ul class=""><li><div class="menu-item"><a href="#Permission.Test.new" class="constructor" title="new Permission.Test (constructor)" data-id="new Permission.Test">new</a></div></li><li><div class="menu-item"><a href="#Permission.Test.prototype.and" class="instance-method" title="Permission.Test#and (instance method)" data-id="Permission.Test#and">and</a></div></li><li><div class="menu-item"><a href="#Permission.Test.prototype.call" class="instance-method" title="Permission.Test#call (instance method)" data-id="Permission.Test#call">call</a></div></li><li><div class="menu-item"><a href="#Permission.Test.prototype.or" class="instance-method" title="Permission.Test#or (instance method)" data-id="Permission.Test#or">or</a></div></li></ul></li><li><div class="menu-item"><a href="#Permission.prototype.addTest" class="instance-method" title="Permission#addTest (instance method)" data-id="Permission#addTest">addTest</a></div></li><li><div class="menu-item"><a href="#Permission.prototype.or" class="instance-method" title="Permission#or (instance method)" data-id="Permission#or">or</a></div></li><li><div class="menu-item"><a href="#Permission.prototype.test" class="instance-method" title="Permission#test (instance method)" data-id="Permission#test">test</a></div></li><li><div class="menu-item"><a href="#Permission.prototype.filter" class="instance-property" title="Permission#filter (instance property)" data-id="Permission#filter">filter</a></div></li></ul></li><li><div class="menu-item"><a href="#Settings" class="class" title="Settings (class)" data-id="Settings">Settings</a></div><ul class=""><li><div class="menu-item"><a href="#Settings.new" class="constructor" title="new Settings (constructor)" data-id="new Settings">new</a></div></li><li><div class="menu-item"><a href="#Settings.Store" class="class" title="Settings.Store (class)" data-id="Settings.Store">Settings.Store</a></div><ul class=""><li><div class="menu-item"><a href="#Settings.Store.new" class="constructor" title="new Settings.Store (constructor)" data-id="new Settings.Store">new</a></div></li><li><div class="menu-item"><a href="#Settings.Store.adopts" class="class-method" title="Settings.Store.adopts (class method)" data-id="Settings.Store.adopts">adopts</a></div></li><li><div class="menu-item"><a href="#Settings.Store.prototype.get" class="instance-method" title="Settings.Store#get (instance method)" data-id="Settings.Store#get">get</a></div></li><li><div class="menu-item"><a href="#Settings.Store.prototype.getDefaultsFor" class="instance-method" title="Settings.Store#getDefaultsFor (instance method)" data-id="Settings.Store#getDefaultsFor">getDefaultsFor</a></div></li><li><div class="menu-item"><a href="#Settings.Store.prototype.preload" class="instance-method" title="Settings.Store#preload (instance method)" data-id="Settings.Store#preload">preload</a></div></li><li><div class="menu-item"><a href="#Settings.Store.prototype.set" class="instance-method" title="Settings.Store#set (instance method)" data-id="Settings.Store#set">set</a></div></li><li><div class="menu-item"><a href="#Settings.Store.prototype.keys" class="instance-property" title="Settings.Store#keys (instance property)" data-id="Settings.Store#keys">keys</a></div></li></ul></li><li><div class="menu-item"><a href="#Settings.prototype.definition" class="instance-method" title="Settings#definition (instance method)" data-id="Settings#definition">definition</a></div></li><li><div class="menu-item"><a href="#Settings.prototype.get" class="instance-method" title="Settings#get (instance method)" data-id="Settings#get">get</a></div></li><li><div class="menu-item"><a href="#Settings.prototype.store" class="instance-method" title="Settings#store (instance method)" data-id="Settings#store">store</a></div></li></ul></li><li><div class="menu-item"><a href="#nodeca.hooks.init" class="class-property" title="nodeca.hooks.init (class property)" data-id="nodeca.hooks.init">init</a></div></li><li><div class="menu-item"><a href="#nodeca.hooks.models" class="class-property" title="nodeca.hooks.models (class property)" data-id="nodeca.hooks.models">models</a></div></li><li><div class="menu-item"><a href="#Promise.prototype.done" class="instance-method" title="Promise#done (instance method)" data-id="Promise#done">done</a></div></li><li><div class="menu-item"><a href="#Promise.prototype.resolve" class="instance-method" title="Promise#resolve (instance method)" data-id="Promise#resolve">resolve</a></div></li><li><div class="menu-item"><a href="#Promise.prototype.resolved" class="instance-property" title="Promise#resolved (instance property)" data-id="Promise#resolved">resolved</a></div></li><li><div class="menu-item"><a href="#Promise.new" class="constructor" title="new Promise (constructor)" data-id="new Promise">new</a></div></li><li><div class="menu-item"><a href="#Support.HashTree" class="namespace internal" title="Support.HashTree (namespace)" data-id="Support.HashTree">HashTree</a></div><ul class=""><li><div class="menu-item"><a href="#Support.HashTree.get" class="class-method" title="Support.HashTree.get (class method)" data-id="Support.HashTree.get">get</a></div></li><li><div class="menu-item"><a href="#Support.HashTree.getKnownPaths" class="class-method" title="Support.HashTree.getKnownPaths (class method)" data-id="Support.HashTree.getKnownPaths">getKnownPaths</a></div></li><li><div class="menu-item"><a href="#Support.HashTree.has" class="class-method" title="Support.HashTree.has (class method)" data-id="Support.HashTree.has">has</a></div></li><li><div class="menu-item"><a href="#Support.HashTree.set" class="class-method" title="Support.HashTree.set (class method)" data-id="Support.HashTree.set">set</a></div></li></ul></li><li><div class="menu-item"><a href="#Support.Hooker" class="class internal" title="Support.Hooker (class)" data-id="Support.Hooker">Hooker</a></div><ul class=""><li><div class="menu-item"><a href="#Support.Hooker.new" class="constructor" title="new Support.Hooker (constructor)" data-id="new Support.Hooker">new</a></div></li><li><div class="menu-item"><a href="#Support.Hooker.after" class="class-method" title="Support.Hooker.after (class method)" data-id="Support.Hooker.after">after</a></div></li><li><div class="menu-item"><a href="#Support.Hooker.before" class="class-method" title="Support.Hooker.before (class method)" data-id="Support.Hooker.before">before</a></div></li><li><div class="menu-item"><a href="#Support.Hooker.create" class="class-method" title="Support.Hooker.create (class method)" data-id="Support.Hooker.create">create</a></div></li><li><div class="menu-item"><a href="#Support.Hooker.run" class="class-method" title="Support.Hooker.run (class method)" data-id="Support.Hooker.run">run</a></div></li><li><div class="menu-item"><a href="#Support.Hooker.prototype.on" class="instance-method" title="Support.Hooker#on (instance method)" data-id="Support.Hooker#on">on</a></div></li></ul></li><li><div class="menu-item"><a href="#Support.Promise" class="class internal" title="Support.Promise (class)" data-id="Support.Promise">Promise</a></div></li></ul></nav><article class="main"><article id="home" data-title="Home" class="article"><div class="readme"><h1>nlib</h1>
+<p>Kitchen for Nodeca base classes &amp; helpers. Since our goal is NOT making framework,
+some solutions can be simplified and not flexible. If some part looks universal, we can
+move it to separate micromodule after stabilization.
+
+</p>
+<p>This module is also responsible for syndication all Nodeca dependencies (to simplify template
+of main &amp; each subproject).
+
+</p>
+<p>See docs for details: <a href="http://nodeca.github.com/nlib/">http://nodeca.github.com/nlib/</a>
+</p>
+</div></article><article id="Application" data-title="Application (class)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li></ul><h2><span class="type">class</span><span class="name">Application</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application.js#L13">View source code</a></div></header><div class="section description"><h3>Description</h3><div class="content"><h5>Example</h5>
+<pre><code>// file: index.js
+module.exports = new Application({
+  name: &apos;hello-world&apos;,
+  root: __dirname
+});</code></pre>
+</div></div><div class="section namespaces"><h3>Namespaces</h3><div class="content"><ul class="method-details-list"><li class="method-description"><h4><a href="#Application.Initializer" class="" title="Application.Initializer (namespace)" data-id="Application.Initializer">Application.Initializer</a></h4></li><li class="method-description"><h4><a href="#Application.StaticBundler" class="" title="Application.StaticBundler (namespace)" data-id="Application.StaticBundler">Application.StaticBundler</a></h4><p>Collect and build views, assets, api trees etc from all applications</p>
+</li></ul></div></div><div class="section constructor"><h3>Constructor</h3><div class="content"></div><ul class="method-list"><li><a href="#Application.new" class="" title="new Application (constructor)" data-id="new Application">new Application</a></li></ul></div><div class="section class_methods"><h3>Class methods</h3><div class="content"><ul class="method-list"><li><a href="#Application.create" class="" title="Application.create (class method)" data-id="Application.create">create</a></li></ul></div></div><div class="section class_properties"><h3>Class properties</h3><div class="content"><ul class="method-list"><li><a href="#Application.env" class="" title="Application.env (class property)" data-id="Application.env">env</a></li></ul></div></div><div class="section instance_methods"><h3>Instance methods</h3><div class="content"><ul class="method-list"><li><a href="#Application.prototype.bootstrap" class="" title="Application#bootstrap (instance method)" data-id="Application#bootstrap">bootstrap</a></li><li><a href="#Application.prototype.run" class="" title="Application#run (instance method)" data-id="Application#run">run</a></li></ul></div></div><div class="section instance_properties"><h3>Instance properties</h3><div class="content"><ul class="method-list"><li><a href="#Application.prototype.name" class="" title="Application#name (instance property)" data-id="Application#name">name</a></li><li><a href="#Application.prototype.root" class="" title="Application#root (instance property)" data-id="Application#root">root</a></li></ul></div></div></article><article id="Application.new" data-title="new Application (constructor)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.new" class="" title="new Application (constructor)" data-id="new Application">new</a></li></ul><h2><span class="type">constructor</span><span class="name">new Application</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application.js#L58">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new Application(options)</li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">options</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>Application basic configuration</p>
+</li></ul></li></ul><p>Creates new nodeca application with given <code>options.root</code> as application
+root (directory with application methods, views etc).
+
+
+</p>
+<h5>Options</h5>
+<ul>
+<li><code>root</code> (required) - Application&apos;s root path (usually <code>__dirname</code>)</li>
+<li><code>name</code> (required) - Application name must be unique (usaually same as you
+provide in <code>package.json</code></li>
+</ul>
+<h5>Example</h5>
+<pre><code>var app = new Application({
+  name: &apos;my_app&apos;,
+  root: __dirname
+});</code></pre>
+<h5>See Also</h5>
+<ul>
+<li>Application.before</li>
+<li>Application.after</li>
+</ul>
+</div></div><div class="alias aliases">Aliased as:
+<ul><li><a href="#Application.create" class="" title="Application.create (class method)" data-id="Application.create">Application.create</a></li></ul></div></article><article id="Application.Initializer" data-title="Application.Initializer (namespace)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.Initializer" class="" title="Application.Initializer (namespace)" data-id="Application.Initializer">Initializer</a></li></ul><h2><span class="type">namespace</span><span class="name">Application.Initializer</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application/initializer.js#L4">View source code</a></div></header><div class="labels"><span class="internal">internal</span></div><div class="section class_methods"><h3>Class methods</h3><div class="content"><ul class="method-list"><li><a href="#Application.Initializer.initialize" class="" title="Application.Initializer.initialize (class method)" data-id="Application.Initializer.initialize">initialize</a></li><li><a href="#Application.Initializer.preload" class="" title="Application.Initializer.preload (class method)" data-id="Application.Initializer.preload">preload</a></li></ul></div></div></article><article id="Application.Initializer.initialize" data-title="Application.Initializer.initialize (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.Initializer" class="" title="Application.Initializer (namespace)" data-id="Application.Initializer">Initializer</a></li><li><a href="#Application.Initializer.initialize" class="" title="Application.Initializer.initialize (class method)" data-id="Application.Initializer.initialize">initialize</a></li></ul><h2><span class="type">class method</span><span class="name">Application.Initializer.initialize</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application/initializer.js#L569">View source code</a></div></header><div class="labels"><span class="internal">internal</span></div><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Application.Initializer.initialize(stages, callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li><li class="signature"><ul><li class="signature-call">Application.Initializer.initialize(callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul></div></div></article><article id="Application.Initializer.preload" data-title="Application.Initializer.preload (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.Initializer" class="" title="Application.Initializer (namespace)" data-id="Application.Initializer">Initializer</a></li><li><a href="#Application.Initializer.preload" class="" title="Application.Initializer.preload (class method)" data-id="Application.Initializer.preload">preload</a></li></ul><h2><span class="type">class method</span><span class="name">Application.Initializer.preload</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application/initializer.js#L554">View source code</a></div></header><div class="labels"><span class="internal">internal</span></div><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Application.Initializer.preload(mainApp, callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul></div></div></article><article id="Application.StaticBundler" data-title="Application.StaticBundler (namespace)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.StaticBundler" class="" title="Application.StaticBundler (namespace)" data-id="Application.StaticBundler">StaticBundler</a></li></ul><h2><span class="type">namespace</span><span class="name">Application.StaticBundler</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application/static-bundler.js#L6">View source code</a></div></header><div class="labels"><span class="internal">internal</span></div><div class="section description"><h3>Description</h3><div class="content"><p>Collect and build views, assets, api trees etc from all applications</p>
+</div></div><div class="section class_methods"><h3>Class methods</h3><div class="content"><ul class="method-list"><li><a href="#Application.StaticBundler.bundle" class="" title="Application.StaticBundler.bundle (class method)" data-id="Application.StaticBundler.bundle">bundle</a></li></ul></div></div></article><article id="Application.StaticBundler.bundle" data-title="Application.StaticBundler.bundle (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.StaticBundler" class="" title="Application.StaticBundler (namespace)" data-id="Application.StaticBundler">StaticBundler</a></li><li><a href="#Application.StaticBundler.bundle" class="" title="Application.StaticBundler.bundle (class method)" data-id="Application.StaticBundler.bundle">bundle</a></li></ul><h2><span class="type">class method</span><span class="name">Application.StaticBundler.bundle</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application/static-bundler.js#L215">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Application.StaticBundler.bundle(nodeca, callback(err, bundle_dir))</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">nodeca</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>Nodeca API tree</p>
+</li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">init_env</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>loaded apps, registerView callback</p>
+</li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">callback</li><li class="argument-types"><ul><li class="argument-type">Function</li></ul></li><li class="argument-description"><p>Executed once assets bundled with <code>err, bundle_dir</code>.</p>
+</li></ul></li></ul><p>Build all assets and output result into directory.</p>
+</div></div></article><article id="Application.create" data-title="Application.create (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.create" class="" title="Application.create (class method)" data-id="Application.create">create</a></li></ul><h2><span class="type">class method</span><span class="name">Application.create</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application.js#L115">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Application.create(options)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#Application" class="link-short" title="Application (class)" data-id="Application">Application</a></li></ul></li></ul></li></ul><p>Constructor proxy</p>
+</div></div><div class="alias alias-of">Alias of:
+<ul><li><a href="#Application.new" class="" title="new Application (constructor)" data-id="new Application">new Application</a></li></ul></div></article><article id="Application.env" data-title="Application.env (class property)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.env" class="" title="Application.env (class property)" data-id="Application.env">env</a></li></ul><h2><span class="type">class property</span><span class="name">Application.env</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application.js#L125">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Application.env</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">String</li></ul></li></ul></li></ul><p>Proxy to process.env[&apos;NODECA_ENV&apos;]</p>
+</div></div></article><article id="Application.prototype.bootstrap" data-title="Application#bootstrap (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.prototype.bootstrap" class="" title="Application#bootstrap (instance method)" data-id="Application#bootstrap">bootstrap</a></li></ul><h2><span class="type">instance method</span><span class="name">Application#bootstrap</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application.js#L84">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Application#bootstrap(callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul><p>Proxy to the <code>bootstrap</code> function provided in constructor&apos;s options.</p>
+</div></div></article><article id="Application.prototype.run" data-title="Application#run (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.prototype.run" class="" title="Application#run (instance method)" data-id="Application#run">run</a></li></ul><h2><span class="type">instance method</span><span class="name">Application#run</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application.js#L93">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Application#run()</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul><p>Runs application (initialize, start http and websocket servers).</p>
+</div></div></article><article id="Application.prototype.name" data-title="Application#name (instance property)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.prototype.name" class="" title="Application#name (instance property)" data-id="Application#name">name</a></li></ul><h2><span class="type">instance property</span><span class="name">Application#name</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application.js#L76">View source code</a></div></header><div class="labels"><span class="read-only">read-only</span></div><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Application#name</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">String</li></ul></li></ul></li></ul><p>Applications&apos;s name.</p>
+</div></div></article><article id="Application.prototype.root" data-title="Application#root (instance property)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Application" class="" title="Application (class)" data-id="Application">Application</a></li><li><a href="#Application.prototype.root" class="" title="Application#root (instance property)" data-id="Application#root">root</a></li></ul><h2><span class="type">instance property</span><span class="name">Application#root</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application.js#L68">View source code</a></div></header><div class="labels"><span class="read-only">read-only</span></div><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Application#root</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">String</li></ul></li></ul></li></ul><p>Applications&apos;s root directory</p>
+</div></div></article><article id="NLib" data-title="NLib (namespace)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#NLib" class="" title="NLib (namespace)" data-id="NLib">NLib</a></li></ul><h2><span class="type">namespace</span><span class="name">NLib</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib.js#L4">View source code</a></div></header><div class="section namespaces"><h3>Namespaces</h3><div class="content"><ul class="method-details-list"><li class="method-description"><h4><a href="#NLib.Vendor" class="" title="NLib.Vendor (namespace)" data-id="NLib.Vendor">NLib.Vendor</a></h4></li></ul></div></div></article><article id="NLib.Vendor" data-title="NLib.Vendor (namespace)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#NLib" class="" title="NLib (namespace)" data-id="NLib">NLib</a></li><li><a href="#NLib.Vendor" class="" title="NLib.Vendor (namespace)" data-id="NLib.Vendor">Vendor</a></li></ul><h2><span class="type">namespace</span><span class="name">NLib.Vendor</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib.js#L17">View source code</a></div></header><div class="section namespaces"><h3>Namespaces</h3><div class="content"><ul class="method-details-list"><li class="method-description"><h4><a href="#NLib.Vendor.Async" class="" title="NLib.Vendor.Async (namespace)" data-id="NLib.Vendor.Async">NLib.Vendor.Async</a></h4></li><li class="method-description"><h4><a href="#NLib.Vendor.FsTools" class="" title="NLib.Vendor.FsTools (namespace)" data-id="NLib.Vendor.FsTools">NLib.Vendor.FsTools</a></h4></li><li class="method-description"><h4><a href="#NLib.Vendor.Underscore" class="" title="NLib.Vendor.Underscore (namespace)" data-id="NLib.Vendor.Underscore">NLib.Vendor.Underscore</a></h4></li></ul></div></div></article><article id="NLib.Vendor.Async" data-title="NLib.Vendor.Async (namespace)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#NLib" class="" title="NLib (namespace)" data-id="NLib">NLib</a></li><li><a href="#NLib.Vendor" class="" title="NLib.Vendor (namespace)" data-id="NLib.Vendor">Vendor</a></li><li><a href="#NLib.Vendor.Async" class="" title="NLib.Vendor.Async (namespace)" data-id="NLib.Vendor.Async">Async</a></li></ul><h2><span class="type">namespace</span><span class="name">NLib.Vendor.Async</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib.js#L21">View source code</a></div></header></article><article id="NLib.Vendor.FsTools" data-title="NLib.Vendor.FsTools (namespace)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#NLib" class="" title="NLib (namespace)" data-id="NLib">NLib</a></li><li><a href="#NLib.Vendor" class="" title="NLib.Vendor (namespace)" data-id="NLib.Vendor">Vendor</a></li><li><a href="#NLib.Vendor.FsTools" class="" title="NLib.Vendor.FsTools (namespace)" data-id="NLib.Vendor.FsTools">FsTools</a></li></ul><h2><span class="type">namespace</span><span class="name">NLib.Vendor.FsTools</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib.js#L25">View source code</a></div></header></article><article id="NLib.Vendor.Underscore" data-title="NLib.Vendor.Underscore (namespace)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#NLib" class="" title="NLib (namespace)" data-id="NLib">NLib</a></li><li><a href="#NLib.Vendor" class="" title="NLib.Vendor (namespace)" data-id="NLib.Vendor">Vendor</a></li><li><a href="#NLib.Vendor.Underscore" class="" title="NLib.Vendor.Underscore (namespace)" data-id="NLib.Vendor.Underscore">Underscore</a></li></ul><h2><span class="type">namespace</span><span class="name">NLib.Vendor.Underscore</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib.js#L29">View source code</a></div></header></article><article id="nodeca" data-title="nodeca (namespace)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#nodeca" class="" title="nodeca (namespace)" data-id="nodeca">nodeca</a></li></ul><h2><span class="type">namespace</span><span class="name">nodeca</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application/initializer.js#L39">View source code</a></div></header><div class="section description"><h3>Description</h3><div class="content"><p>Nodeca global object</p>
+</div></div><div class="section class_properties"><h3>Class properties</h3><div class="content"><ul class="method-list"><li><a href="#nodeca.filter" class="" title="nodeca.filter (class property)" data-id="nodeca.filter">filter</a></li></ul></div></div></article><article id="nodeca.filter" data-title="nodeca.filter (class property)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#nodeca" class="" title="nodeca (namespace)" data-id="nodeca">nodeca</a></li><li><a href="#nodeca.filter" class="" title="nodeca.filter (class property)" data-id="nodeca.filter">filter</a></li></ul><h2><span class="type">class property</span><span class="name">nodeca.filter</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application/initializer.js#L76">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">nodeca.filter</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Hooker</li></ul></li></ul></li></ul></div></div></article><article id="Permission" data-title="Permission (class)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li></ul><h2><span class="type">class</span><span class="name">Permission</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission.js#L9">View source code</a></div></header><div class="section description"><h3>Description</h3><div class="content"><p>Represents single permission object. Each permission object consist of
+
+</p>
+<ul>
+<li>custom test functions</li>
+<li>tests of settings</li>
+</ul>
+</div></div><div class="section classes"><h3>Classes</h3><div class="content"><ul class="method-details-list"><li class="method-description"><h4><a href="#Permission.Test" class="" title="Permission.Test (class)" data-id="Permission.Test">Permission.Test</a></h4><p>Represents single group of tests, e.g.
+</p>
+</li></ul></div></div><div class="section constructor"><h3>Constructor</h3><div class="content"></div><ul class="method-list"><li><a href="#Permission.new" class="" title="new Permission (constructor)" data-id="new Permission">new Permission</a></li></ul></div><div class="section instance_methods"><h3>Instance methods</h3><div class="content"><ul class="method-list"><li><a href="#Permission.prototype.addTest" class="" title="Permission#addTest (instance method)" data-id="Permission#addTest">addTest</a></li><li><a href="#Permission.prototype.or" class="" title="Permission#or (instance method)" data-id="Permission#or">or</a></li><li><a href="#Permission.prototype.test" class="" title="Permission#test (instance method)" data-id="Permission#test">test</a></li></ul></div></div><div class="section instance_properties"><h3>Instance properties</h3><div class="content"><ul class="method-list"><li><a href="#Permission.prototype.filter" class="" title="Permission#filter (instance property)" data-id="Permission#filter">filter</a></li></ul></div></div></article><article id="Permission.new" data-title="new Permission (constructor)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.new" class="" title="new Permission (constructor)" data-id="new Permission">new</a></li></ul><h2><span class="type">constructor</span><span class="name">new Permission</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission.js#L196">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new Permission(app[, onFail])</li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">app</li><li class="argument-types"><ul><li class="argument-type">Application</li></ul></li><li class="argument-description"><p>Instance of application</p>
+</li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">onFail</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>Definition of action in case of permission denied.</p>
+</li></ul></li></ul><h5>Handling Failures</h5>
+<p>Failures are handled by schema defined in <code>onFail</code>. This object may contain
+following keys:
+
+</p>
+<ul>
+<li>forward (String): Forwards request to <code>controller#action</code></li>
+<li>redirect (String): Redirects request to given URL with 302 code</li>
+<li>handler (Function): Custom handler function with <code>req, res, next</code> args.</li>
+<li>message (String): Message to be written into flash-messanger stack.</li>
+</ul>
+<p>When permission denied, then following algorithm will be used:
+
+</p>
+<ul>
+<li>Assign <code>req.error</code> to <code>onFail.message</code></li>
+<li>Try error handlers (first one found):<ul>
+<li><code>onFail.handler</code> pass execution to it and stop default route</li>
+<li><code>onFail.redirect</code> will redirect request and stop routing execution</li>
+<li><code>onFail.forward</code> will forward request to given action</li>
+</ul>
+</li>
+<li>Stop execution by call <code>next(Error(onFail.message))</code></li>
+</ul>
+</div></div></article><article id="Permission.Test" data-title="Permission.Test (class)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.Test" class="" title="Permission.Test (class)" data-id="Permission.Test">Test</a></li></ul><h2><span class="type">class</span><span class="name">Permission.Test</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission/test.js#L48">View source code</a></div></header><div class="labels"><span class="internal">internal</span></div><div class="section description"><h3>Description</h3><div class="content"><p>Represents single group of tests, e.g.
+
+</p>
+<pre><code>// a AND b AND c OR d AND e
+Test(a).and(b).and(c).or(d).and(e);</code></pre>
+<p>You can pass <code>Test</code> objects into tests to get &quot;groupings&quot;, e.g.:
+
+</p>
+<pre><code>// a AND ( b OR c AND d ) AND e
+var t = Test(b).or(c).and(d);
+Test(a).and(t).and(e);</code></pre>
+<h5>Test Handlers</h5>
+<p>Each <code>Test</code> instance consist of <em>stacks</em> of tests. Each <code>or</code> creates new
+stack and calls <code>and</code>. Each <code>and</code> pushes test to the latest stack. Each
+<code>test</code> handler is a simple function (or any object that responds to <code>call</code>
+method) that accepts only one argument <code>callback(err, result)</code> and being
+called within context of <code>env</code> object provided to the <code>call</code>.
+
+</p>
+<pre><code>var a = function (cb) {
+      // I want foobar to be zero
+      cb(null, 0 == this.foobar);
+    },
+    b = {
+      call: function (env, cb) {
+        // I want foobar to be odd
+        cb(null, env.foobar % 2);
+      }
+    },
+    t = Test(a).or(b);
+////////////////////////////////////////////
+t.call({foobar: 0}, function (err, result) {
+  // result === true
+});
+////////////////////////////////////////////
+t.call({foobar: 1}, function (err, result) {
+  // result === true
+});
+////////////////////////////////////////////
+t.call({foobar: 2}, function (err, result) {
+  // result === false
+});</code></pre>
+</div></div><div class="section constructor"><h3>Constructor</h3><div class="content"></div><ul class="method-list"><li><a href="#Permission.Test.new" class="" title="new Permission.Test (constructor)" data-id="new Permission.Test">new Permission.Test</a></li></ul></div><div class="section instance_methods"><h3>Instance methods</h3><div class="content"><ul class="method-list"><li><a href="#Permission.Test.prototype.and" class="" title="Permission.Test#and (instance method)" data-id="Permission.Test#and">and</a></li><li><a href="#Permission.Test.prototype.call" class="" title="Permission.Test#call (instance method)" data-id="Permission.Test#call">call</a></li><li><a href="#Permission.Test.prototype.or" class="" title="Permission.Test#or (instance method)" data-id="Permission.Test#or">or</a></li></ul></div></div></article><article id="Permission.Test.new" data-title="new Permission.Test (constructor)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.Test" class="" title="Permission.Test (class)" data-id="Permission.Test">Test</a></li><li><a href="#Permission.Test.new" class="" title="new Permission.Test (constructor)" data-id="new Permission.Test">new</a></li></ul><h2><span class="type">constructor</span><span class="name">new Permission.Test</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission/test.js#L77">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new Permission.Test([test])</li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">test</li><li class="argument-types"><ul><li class="argument-type">Function</li></ul></li><li class="argument-description"><p>Test handler proxied to <a href="#Permission.Test.prototype.and" class="link-short" title="Permission.Test#and (instance method)" data-id="Permission.Test#and">Permission.Test#and</a></p>
+</li></ul></li></ul><p>Class constructor. Allows omit <code>new</code> keyword.</p>
+</div></div></article><article id="Permission.Test.prototype.and" data-title="Permission.Test#and (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.Test" class="" title="Permission.Test (class)" data-id="Permission.Test">Test</a></li><li><a href="#Permission.Test.prototype.and" class="" title="Permission.Test#and (instance method)" data-id="Permission.Test#and">and</a></li></ul><h2><span class="type">instance method</span><span class="name">Permission.Test#and</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission/test.js#L104">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Permission.Test#and(test)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#Permission.Test" class="link-short" title="Permission.Test (class)" data-id="Permission.Test">Test</a></li></ul></li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">test</li><li class="argument-types"><ul><li class="argument-type">Function</li></ul></li><li class="argument-description"><p>Test handler.</p>
+</li></ul></li></ul><p>Adds <code>test</code> to the latest stack of tests.
+
+</p>
+<h5>See Also</h5>
+<ul>
+<li><em>Test Handlers</em> section of <a href="#Permission.Test" class="link-short" title="Permission.Test (class)" data-id="Permission.Test">Permission.Test</a></li>
+</ul>
+</div></div></article><article id="Permission.Test.prototype.call" data-title="Permission.Test#call (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.Test" class="" title="Permission.Test (class)" data-id="Permission.Test">Test</a></li><li><a href="#Permission.Test.prototype.call" class="" title="Permission.Test#call (instance method)" data-id="Permission.Test#call">call</a></li></ul><h2><span class="type">instance method</span><span class="name">Permission.Test#call</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission/test.js#L142">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Permission.Test#call(env, callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">env</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>Context of tests execution</p>
+</li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">callback</li><li class="argument-types"><ul><li class="argument-type">Function</li></ul></li><li class="argument-description"><p>Fired after all tests finished with <code>(err, result)</code>, where <code>err</code> is an error if any, null otherwise and <code>result</code> is boolean.</p>
+</li></ul></li></ul><p><strong> NOTICE </strong>
+This method was named <code>call</code> <em>specially</em> to blur differences between
+functions and Test instance, it can be <em>executed</em> same way. And when all
+attached test handlers (via Test#and | Test#or) are being processed,
+there would be no need in special checking if object is a function or not.
+So any object with <code>call</code> property can be used as test handler in fact.
+
+</p>
+<p>Runs all tests and fires callback.</p>
+</div></div></article><article id="Permission.Test.prototype.or" data-title="Permission.Test#or (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.Test" class="" title="Permission.Test (class)" data-id="Permission.Test">Test</a></li><li><a href="#Permission.Test.prototype.or" class="" title="Permission.Test#or (instance method)" data-id="Permission.Test#or">or</a></li></ul><h2><span class="type">instance method</span><span class="name">Permission.Test#or</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission/test.js#L120">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Permission.Test#or(test)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#Permission.Test" class="link-short" title="Permission.Test (class)" data-id="Permission.Test">Test</a></li></ul></li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">test</li><li class="argument-types"><ul><li class="argument-type">Function</li></ul></li><li class="argument-description"><p>Test handler.</p>
+</li></ul></li></ul><p>Appends new stack of tests and adds <code>test</code> to it.
+
+</p>
+<h5>See Also</h5>
+<ul>
+<li><em>Test Handlers</em> section of <a href="#Permission.Test" class="link-short" title="Permission.Test (class)" data-id="Permission.Test">Permission.Test</a></li>
+</ul>
+</div></div></article><article id="Permission.prototype.addTest" data-title="Permission#addTest (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.prototype.addTest" class="" title="Permission#addTest (instance method)" data-id="Permission#addTest">addTest</a></li></ul><h2><span class="type">instance method</span><span class="name">Permission#addTest</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission.js#L287">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Permission#addTest(operation, condition[, onFail])</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#Permission" class="link-short" title="Permission (class)" data-id="Permission">Permission</a></li></ul></li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">condition</li><li class="argument-types"><ul><li class="argument-type">String</li><li class="argument-type">Function</li></ul></li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">onFail</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>See <a href="#Permission" class="link-short" title="Permission (class)" data-id="Permission">Permission</a> constructor for detailed info</p>
+</li></ul></li></ul><p>Adds test with given <code>operation</code>. You can override message and/or handler of
+the generic <code>onFail</code> (given in the constructor).
+
+
+</p>
+<p><strong> NOTICE </strong>
+<code>onFail</code> will be <em>ignored</em> when <code>operation</code> is <code>OR</code>.
+
+
+</p>
+<h5>When <code>condition</code> is a Function</h5>
+<p>Instance of <a href="#Permission.Test" class="link-short" title="Permission.Test (class)" data-id="Permission.Test">Permission.Test</a> will be created with this function.
+
+
+</p>
+<h5>When <code>condition</code> is a String</h5>
+<p>Will parse given string and create <a href="#Permission.Test" class="link-short" title="Permission.Test (class)" data-id="Permission.Test">Permission.Test</a> instance filled with
+tests of given settings. You can use <code>AND</code> or <code>&amp;&amp;</code> and <code>OR</code> or <code>||</code> for
+alternatives. You can use <code>NOT</code> for negative test. You can use <code>()</code> brackets
+for grouping tests.
+
+</p>
+<pre><code>is_translator_moderator OR ( can_propose_translation AND NOT banned )</code></pre>
+<h5>See Also</h5>
+<ul>
+<li><a href="#Permission.Test" class="link-short" title="Permission.Test (class)" data-id="Permission.Test">Permission.Test</a></li>
+</ul>
+</div></div></article><article id="Permission.prototype.or" data-title="Permission#or (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.prototype.or" class="" title="Permission#or (instance method)" data-id="Permission#or">or</a></li></ul><h2><span class="type">instance method</span><span class="name">Permission#or</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission.js#L323">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Permission#or(condition)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#Permission" class="link-short" title="Permission (class)" data-id="Permission">Permission</a></li></ul></li></ul></li></ul><p>Syntax sugar. Shortcut for <code>test(&apos;OR&apos;, condition, null)</code>.
+
+</p>
+<h5>See Also</h5>
+<ul>
+<li><a href="#Permission.prototype.addTest" class="link-short" title="Permission#addTest (instance method)" data-id="Permission#addTest">Permission#addTest</a></li>
+</ul>
+</div></div></article><article id="Permission.prototype.test" data-title="Permission#test (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.prototype.test" class="" title="Permission#test (instance method)" data-id="Permission#test">test</a></li></ul><h2><span class="type">instance method</span><span class="name">Permission#test</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission.js#L308">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Permission#test(condition, onFail)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#Permission" class="link-short" title="Permission (class)" data-id="Permission">Permission</a></li></ul></li></ul></li><li class="signature"><ul><li class="signature-call">Permission#test(condition, onFail)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#Permission" class="link-short" title="Permission (class)" data-id="Permission">Permission</a></li></ul></li></ul></li></ul><p>Syntax sugar. Shortcut for <code>test(&apos;AND&apos;, condition, onFail)</code>.
+
+</p>
+<h5>See Also</h5>
+<ul>
+<li><a href="#Permission.prototype.addTest" class="link-short" title="Permission#addTest (instance method)" data-id="Permission#addTest">Permission#addTest</a></li>
+</ul>
+</div></div></article><article id="Permission.prototype.filter" data-title="Permission#filter (instance property)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Permission" class="" title="Permission (class)" data-id="Permission">Permission</a></li><li><a href="#Permission.prototype.filter" class="" title="Permission#filter (instance property)" data-id="Permission#filter">filter</a></li></ul><h2><span class="type">instance property</span><span class="name">Permission#filter</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/permission.js#L218">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Permission#filter</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Function</li></ul></li></ul></li></ul><p>Handler, suitable to be used as before filter of the controller.
+Will run all attached tests and will either deny action or will
+pass execution to next filter/action.
+
+
+</p>
+<h5>See Also</h5>
+<ul>
+<li><a href="#Permission.prototype.test" class="link-short" title="Permission#test (instance method)" data-id="Permission#test">Permission#test</a></li>
+</ul>
+</div></div></article><article id="Settings" data-title="Settings (class)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li></ul><h2><span class="type">class</span><span class="name">Settings</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings.js#L6">View source code</a></div></header><div class="section description"><h3>Description</h3><div class="content"><p>Provides class that reads and keeps info about all application settings</p>
+</div></div><div class="section classes"><h3>Classes</h3><div class="content"><ul class="method-details-list"><li class="method-description"><h4><a href="#Settings.Store" class="" title="Settings.Store (class)" data-id="Settings.Store">Settings.Store</a></h4></li></ul></div></div><div class="section constructor"><h3>Constructor</h3><div class="content"></div><ul class="method-list"><li><a href="#Settings.new" class="" title="new Settings (constructor)" data-id="new Settings">new Settings</a></li></ul></div><div class="section instance_methods"><h3>Instance methods</h3><div class="content"><ul class="method-list"><li><a href="#Settings.prototype.definition" class="" title="Settings#definition (instance method)" data-id="Settings#definition">definition</a></li><li><a href="#Settings.prototype.get" class="" title="Settings#get (instance method)" data-id="Settings#get">get</a></li><li><a href="#Settings.prototype.store" class="" title="Settings#store (instance method)" data-id="Settings#store">store</a></li></ul></div></div></article><article id="Settings.new" data-title="new Settings (constructor)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.new" class="" title="new Settings (constructor)" data-id="new Settings">new</a></li></ul><h2><span class="type">constructor</span><span class="name">new Settings</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings.js#L48">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new Settings()</li></ul></li></ul></div></div></article><article id="Settings.Store" data-title="Settings.Store (class)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.Store" class="" title="Settings.Store (class)" data-id="Settings.Store">Store</a></li></ul><h2><span class="type">class</span><span class="name">Settings.Store</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/store.js#L4">View source code</a></div></header><div class="section constructor"><h3>Constructor</h3><div class="content"></div><ul class="method-list"><li><a href="#Settings.Store.new" class="" title="new Settings.Store (constructor)" data-id="new Settings.Store">new Settings.Store</a></li></ul></div><div class="section class_methods"><h3>Class methods</h3><div class="content"><ul class="method-list"><li><a href="#Settings.Store.adopts" class="" title="Settings.Store.adopts (class method)" data-id="Settings.Store.adopts">adopts</a></li></ul></div></div><div class="section instance_methods"><h3>Instance methods</h3><div class="content"><ul class="method-list"><li><a href="#Settings.Store.prototype.get" class="" title="Settings.Store#get (instance method)" data-id="Settings.Store#get">get</a></li><li><a href="#Settings.Store.prototype.getDefaultsFor" class="" title="Settings.Store#getDefaultsFor (instance method)" data-id="Settings.Store#getDefaultsFor">getDefaultsFor</a></li><li><a href="#Settings.Store.prototype.preload" class="" title="Settings.Store#preload (instance method)" data-id="Settings.Store#preload">preload</a></li><li><a href="#Settings.Store.prototype.set" class="" title="Settings.Store#set (instance method)" data-id="Settings.Store#set">set</a></li></ul></div></div><div class="section instance_properties"><h3>Instance properties</h3><div class="content"><ul class="method-list"><li><a href="#Settings.Store.prototype.keys" class="" title="Settings.Store#keys (instance property)" data-id="Settings.Store#keys">keys</a></li></ul></div></div></article><article id="Settings.Store.new" data-title="new Settings.Store (constructor)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.Store" class="" title="Settings.Store (class)" data-id="Settings.Store">Store</a></li><li><a href="#Settings.Store.new" class="" title="new Settings.Store (constructor)" data-id="new Settings.Store">new</a></li></ul><h2><span class="type">constructor</span><span class="name">new Settings.Store</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/store.js#L62">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new Settings.Store()</li></ul></li></ul><p>Initiates store instance.
+
+</p>
+<p>This is an abstract class. So you need to inherit it in order to make it
+your store work. In your store you must define following functions within
+<code>this.__</code> shared scope:
+
+</p>
+<ul>
+<li>preloader (Function): (optional) Backend of <a href="#Settings.Store.prototype.preload" class="link-short" title="Settings.Store#preload (instance method)" data-id="Settings.Store#preload">Settings.Store#preload</a>.
+Must be a function with 2 arguments <code>(env, callback)</code> if given.</li>
+<li>getter (Function): Backend of <a href="#Settings.Store.prototype.get" class="link-short" title="Settings.Store#get (instance method)" data-id="Settings.Store#get">Settings.Store#get</a>
+Must be a function with 3 arguments <code>(keys, env, callback)</code></li>
+<li>setter (Function): Backend of <a href="#Settings.Store.prototype.set" class="link-short" title="Settings.Store#set (instance method)" data-id="Settings.Store#set">Settings.Store#set</a>
+Must be a function with 2 arguments <code>(data, env, callback)</code></li>
+</ul>
+<p>See corresponding public API methods <a href="#Settings.Store.prototype.preload" class="link-short" title="Settings.Store#preload (instance method)" data-id="Settings.Store#preload">Settings.Store#preload</a>,
+<a href="#Settings.Store.prototype.get" class="link-short" title="Settings.Store#get (instance method)" data-id="Settings.Store#get">Settings.Store#get</a> and <a href="#Settings.Store.prototype.set" class="link-short" title="Settings.Store#set (instance method)" data-id="Settings.Store#set">Settings.Store#set</a> for informations about
+<code>preloader</code>, <code>getter</code> and <code>setter</code>.
+
+
+</p>
+<h5>Example</h5>
+<pre><code>var MyStore = function MyStore() {
+  Settings.Store.call(this);
+  // ...
+  this.__.setter = funciton setter(data, env, callback) {
+    // ...
+  });
+  // ...
+};
+
+Settings.Store.adopts(MyStore);</code></pre>
+<h5>See Also</h5>
+<ul>
+<li><a href="#Settings.prototype.store" class="link-short" title="Settings#store (instance method)" data-id="Settings#store">Settings#store</a></li>
+<li><a href="#Settings.Store.adopts" class="link-short" title="Settings.Store.adopts (class method)" data-id="Settings.Store.adopts">Settings.Store.adopts</a></li>
+</ul>
+</div></div></article><article id="Settings.Store.adopts" data-title="Settings.Store.adopts (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.Store" class="" title="Settings.Store (class)" data-id="Settings.Store">Store</a></li><li><a href="#Settings.Store.adopts" class="" title="Settings.Store.adopts (class method)" data-id="Settings.Store.adopts">adopts</a></li></ul><h2><span class="type">class method</span><span class="name">Settings.Store.adopts</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/store.js#L311">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Settings.Store.adopts(child)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Store</li></ul></li></ul></li></ul><p>Returns adopted <code>child</code>. Wrapper over <code>util.inherit</code> that assigns <code>adopts</code>
+method to the child class as well.
+
+</p>
+<pre><code>Settings.Store.adopts(AppStore);
+AppStore.adopts(MyStore);</code></pre>
+<p>As <code>adopts</code> returns <code>child</code>, above can be written in one line:
+
+</p>
+<pre><code>Settings.Store.adopts(AppStore).adopts(MyStore);</code></pre>
+</div></div></article><article id="Settings.Store.prototype.get" data-title="Settings.Store#get (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.Store" class="" title="Settings.Store (class)" data-id="Settings.Store">Store</a></li><li><a href="#Settings.Store.prototype.get" class="" title="Settings.Store#get (instance method)" data-id="Settings.Store#get">get</a></li></ul><h2><span class="type">instance method</span><span class="name">Settings.Store#get</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/store.js#L134">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Settings.Store#get(key[, env = {}], callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">key</li><li class="argument-types"><ul><li class="argument-type">String</li><li class="argument-type">Array</li></ul></li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">env</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>context</p>
+</li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">callback</li><li class="argument-types"><ul><li class="argument-type">Function</li></ul></li></ul></li></ul><p>Calls underlying getter to get value of given key(s). For each key
+underlying <code>getter</code> returns a <code>data</code> object that consist of:
+
+</p>
+<ul>
+<li>value (Mixed)</li>
+<li>strict (Boolean)</li>
+</ul>
+<h5>When <code>key</code> given as a String</h5>
+<p>Will fire <code>callback</code> with <code>data</code> object for given key only.
+
+</p>
+<pre><code>store.get(&apos;foobar&apos;, function (err, data) {
+  if (data.value &amp;&amp; data.strict) {
+    // ...
+  }
+});</code></pre>
+<h5>When <code>key</code> given as an Array</h5>
+<p>Will fire <code>callback</code> with hash of <code>key =&gt; data</code> pairs for the keys.
+
+</p>
+<pre><code>store.get([&apos;foobar&apos;], function (err, data) {
+  if (data.foobar.value &amp;&amp; data.foobar.strict) {
+    // ...
+  }
+});</code></pre>
+<h4>Underlying getter</h4>
+<p>Underlying getter (see <a href="#Settings.Store" class="link-short" title="Settings.Store (class)" data-id="Settings.Store">Settings.Store</a> constructor) must be a function
+with signature:
+
+</p>
+<pre><code>function getter(keys, env, callback);</code></pre>
+<p>and should accept an array of <code>keys</code>, e.g. <code>[&apos;is_frst_gump&apos;, &apos;can_run&apos;]</code>,
+<code>env</code> - an object preloaded by <a href="#Settings.Store.prototype.preload" class="link-short" title="Settings.Store#preload (instance method)" data-id="Settings.Store#preload">Settings.Store#preload</a> and a <code>callback</code>.
+
+</p>
+<p>It should fire <code>callback</code> with arguments <code>err, data</code>, where <code>err</code> is an
+error if any, and <code>data</code> is an object of <code>key =&gt; val</code> pairs and each
+<code>val</code> is a structure with at least <code>value</code> field, e.g.:
+
+</p>
+<pre><code>var getter = function (keys, env, callback) {
+  var results = {};
+
+  keys.forEach(function (k) {
+    results[k] = {value: !!(Date.now()%2)};
+  });
+
+  callback(null, results);
+};</code></pre>
+</div></div></article><article id="Settings.Store.prototype.getDefaultsFor" data-title="Settings.Store#getDefaultsFor (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.Store" class="" title="Settings.Store (class)" data-id="Settings.Store">Store</a></li><li><a href="#Settings.Store.prototype.getDefaultsFor" class="" title="Settings.Store#getDefaultsFor (instance method)" data-id="Settings.Store#getDefaultsFor">getDefaultsFor</a></li></ul><h2><span class="type">instance method</span><span class="name">Settings.Store#getDefaultsFor</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/store.js#L295">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Settings.Store#getDefaultsFor(key)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Mixed</li></ul></li></ul></li></ul><p>Returns default value for given setting key.
+
+</p>
+<p><strong> WARNING </strong>
+This property is a placeholder only. When <code>store</code> is being added to the
+<a href="#Settings" class="link-short" title="Settings (class)" data-id="Settings">Settings</a> manager it receives real function that returns values.</p>
+</div></div></article><article id="Settings.Store.prototype.preload" data-title="Settings.Store#preload (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.Store" class="" title="Settings.Store (class)" data-id="Settings.Store">Store</a></li><li><a href="#Settings.Store.prototype.preload" class="" title="Settings.Store#preload (instance method)" data-id="Settings.Store#preload">preload</a></li></ul><h2><span class="type">instance method</span><span class="name">Settings.Store#preload</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/store.js#L259">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Settings.Store#preload([env = {}], callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">env</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>context</p>
+</li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">callback</li><li class="argument-types"><ul><li class="argument-type">Function</li></ul></li></ul></li></ul><p>Calls underlying <code>preloader</code> for <code>env</code> if it was not preloaded before.
+
+
+</p>
+<h4>Underlying preloader</h4>
+<p>Underlying preloader (see <a href="#Settings.Store" class="link-short" title="Settings.Store (class)" data-id="Settings.Store">Settings.Store</a> constructor) must be a function
+with signature:
+
+</p>
+<pre><code>function preloader(env, callback);</code></pre>
+<p>This method is being called once for each <code>env</code> before execution of <code>get</code> or
+<code>set</code> methods and prepares <code>env</code> to be used by underlying <code>getter</code> and
+<code>setter</code>.</p>
+</div></div></article><article id="Settings.Store.prototype.set" data-title="Settings.Store#set (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.Store" class="" title="Settings.Store (class)" data-id="Settings.Store">Store</a></li><li><a href="#Settings.Store.prototype.set" class="" title="Settings.Store#set (instance method)" data-id="Settings.Store#set">set</a></li></ul><h2><span class="type">instance method</span><span class="name">Settings.Store#set</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/store.js#L221">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Settings.Store#set(data[, env = {}], callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">data</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>key-value pairs to be set</p>
+</li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">env</li><li class="argument-types"><ul><li class="argument-type">Object</li></ul></li><li class="argument-description"><p>context</p>
+</li></ul></li><li class="argument"><ul class="argument-details"><li class="argument-name">callback</li><li class="argument-types"><ul><li class="argument-type">Function</li></ul></li></ul></li></ul><p>Calls underlying setter to set values according to the given <code>data</code> map.
+Each key of <code>data</code> is a setting name (key) and value is an object with
+fields:
+
+</p>
+<ul>
+<li>value (Mixed)</li>
+<li>strict (Boolean)</li>
+</ul>
+<h5>Example</h5>
+<pre><code>var data =
+store.set({foobar: {value: true, strict:false}}, function (err) {
+  if (err) {
+    // ...
+  }
+});</code></pre>
+<h4>Underlying setter</h4>
+<p>Underlying setter (see <a href="#Settings.Store" class="link-short" title="Settings.Store (class)" data-id="Settings.Store">Settings.Store</a> constructor) must be a function
+with signature:
+
+</p>
+<pre><code>function setter(data, env, callback);</code></pre>
+<p>and should accept an hash with <code>data</code>, e.g.
+<code>{is_frst_gump: true, can_run: true}</code>, <code>env</code> - an object preloaded
+by <a href="#Settings.Store.prototype.preload" class="link-short" title="Settings.Store#preload (instance method)" data-id="Settings.Store#preload">Settings.Store#preload</a> and a <code>callback</code>.
+
+</p>
+<p>It should fire <code>callback</code> with only one argument <code>err</code>, where <code>err</code> is an
+error if any, e.g.:
+
+</p>
+<pre><code>var setter = function (data, env, callback) {
+  callback(Error(&quot;Not implemented yet&quot;);
+};</code></pre>
+</div></div></article><article id="Settings.Store.prototype.keys" data-title="Settings.Store#keys (instance property)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.Store" class="" title="Settings.Store (class)" data-id="Settings.Store">Store</a></li><li><a href="#Settings.Store.prototype.keys" class="" title="Settings.Store#keys (instance property)" data-id="Settings.Store#keys">keys</a></li></ul><h2><span class="type">instance property</span><span class="name">Settings.Store#keys</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/store.js#L283">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Settings.Store#keys</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Array</li></ul></li></ul></li></ul><p>Array of all settign keys, the store knows about.
+
+</p>
+<p><strong> WARNING </strong>
+This property is a placeholder only. When <code>store</code> is being added to the
+<a href="#Settings" class="link-short" title="Settings (class)" data-id="Settings">Settings</a> manager it receives real <code>keys</code> getter.</p>
+</div></div></article><article id="Settings.prototype.definition" data-title="Settings#definition (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.prototype.definition" class="" title="Settings#definition (instance method)" data-id="Settings#definition">definition</a></li></ul><h2><span class="type">instance method</span><span class="name">Settings#definition</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings.js#L237">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Settings#definition(store, key[, options])</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Object</li></ul></li></ul></li></ul><p>When <code>options</code> given, adds definition of the setting <code>key</code> under <code>store</code>
+name. Otherwise returns previously added <code>options</code> of the <code>key</code>.
+
+</p>
+<h5>Throws Error</h5>
+<ul>
+<li>When definition with <code>name</code> not found.</li>
+<li>When adding definition with duplicate name</li>
+</ul>
+</div></div></article><article id="Settings.prototype.get" data-title="Settings#get (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.prototype.get" class="" title="Settings#get (instance method)" data-id="Settings#get">get</a></li></ul><h2><span class="type">instance method</span><span class="name">Settings#get</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings.js#L145">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Settings#get(key, env, callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul><p>Finds given key in all available stores and fires <code>callback(err, val)</code>
+with aggregated (combined from different stores) value.
+
+
+</p>
+<h5>Aggregated Value Calculation</h5>
+<p>Result depends on aggregation rules (OR/AND). We don&apos;t use scopes.
+OR rules are calculated first, then AND rules applied over.
+
+</p>
+<p>AND values - are those flagged as <code>strict</code> (or <code>restrictive</code>).</p>
+</div></div></article><article id="Settings.prototype.store" data-title="Settings#store (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Settings" class="" title="Settings (class)" data-id="Settings">Settings</a></li><li><a href="#Settings.prototype.store" class="" title="Settings#store (instance method)" data-id="Settings#store">store</a></li></ul><h2><span class="type">instance method</span><span class="name">Settings#store</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings.js#L196">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Settings#store(name[, store])</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#Settings.Store" class="link-short" title="Settings.Store (class)" data-id="Settings.Store">Store</a></li></ul></li></ul></li></ul><ul class="argument-list"><li class="argument"><ul class="argument-details"><li class="argument-name">store</li><li class="argument-types"><ul><li class="argument-type">Settings.Store</li></ul></li></ul></li></ul><p>When <code>store</code> given adds it and returns back.
+Otherwise returns previously added store.
+
+</p>
+<h5>Throws Error</h5>
+<ul>
+<li>When store with <code>name</code> not found.</li>
+<li>When adding store with duplicate name</li>
+</ul>
+<h5>See Also</h5>
+<ul>
+<li><a href="#Settings.Store" class="link-short" title="Settings.Store (class)" data-id="Settings.Store">Settings.Store</a> constructor for <code>options</code> description</li>
+</ul>
+</div></div></article><article id="nodeca.hooks.init" data-title="nodeca.hooks.init (class property)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#nodeca.hooks.init" class="" title="nodeca.hooks.init (class property)" data-id="nodeca.hooks.init">init</a></li></ul><h2><span class="type">class property</span><span class="name">nodeca.hooks.init</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application/initializer.js#L70">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">nodeca.hooks.init</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Hooker</li></ul></li></ul></li></ul></div></div></article><article id="nodeca.hooks.models" data-title="nodeca.hooks.models (class property)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#nodeca.hooks.models" class="" title="nodeca.hooks.models (class property)" data-id="nodeca.hooks.models">models</a></li></ul><h2><span class="type">class property</span><span class="name">nodeca.hooks.models</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/application/initializer.js#L64">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">nodeca.hooks.models</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Hooker</li></ul></li></ul></li></ul></div></div></article><article id="Promise.prototype.done" data-title="Promise#done (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Promise.prototype.done" class="" title="Promise#done (instance method)" data-id="Promise#done">done</a></li></ul><h2><span class="type">instance method</span><span class="name">Promise#done</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/promise.js#L98">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Promise#done(callback)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Promise</li></ul></li></ul></li></ul><p>Fires <code>callback</code> with arguments passed to <a href="#Promise.prototype.resolve" class="link-short" title="Promise#resolve (instance method)" data-id="Promise#resolve">Promise#resolve</a> when
+promise was resolved.
+
+</p>
+<p>Returns promise itself for chaining purposes.
+
+</p>
+<h5>Example</h5>
+<p>p.done(function (err, user) {
+if (err) {
+throw err;
+}
+
+</p>
+<p>// we have user, woo-hoo
+});</p>
+</div></div></article><article id="Promise.prototype.resolve" data-title="Promise#resolve (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Promise.prototype.resolve" class="" title="Promise#resolve (instance method)" data-id="Promise#resolve">resolve</a></li></ul><h2><span class="type">instance method</span><span class="name">Promise#resolve</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/promise.js#L66">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Promise#resolve()</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Promise</li></ul></li></ul></li></ul><p>Fulfills promise. You can pass any arguments you want - they will be then
+passed to all subscribers of promise fulfillment.
+
+</p>
+<p>Returns promise itself for chaining purposes.
+
+</p>
+<p><strong>NOTICE</strong> You can&apos;t resolve promise more than once. Once promise is
+fulfilled <code>resolve</code> will be silently ignored.
+
+</p>
+<h5>Example</h5>
+<p>User.find({is_admin: 1}, function (err, users) {
+var first_admin = users.shift();
+
+</p>
+<p>if (!user) {
+p.resolve(Error(&apos;No admins found at all&apos;));
+} else {
+p.resolve(err, first_admin);
+}
+});
+
+</p>
+<p>// or even like this
+User.find({id: 1}, p.resolve);</p>
+</div></div></article><article id="Promise.prototype.resolved" data-title="Promise#resolved (instance property)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Promise.prototype.resolved" class="" title="Promise#resolved (instance property)" data-id="Promise#resolved">resolved</a></li></ul><h2><span class="type">instance property</span><span class="name">Promise#resolved</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/promise.js#L114">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Promise#resolved</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Boolean</li></ul></li></ul></li></ul><p>Tells whenever promise was yet resolved or not.</p>
+</div></div></article><article id="Promise.new" data-title="new Promise (constructor)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Promise.new" class="" title="new Promise (constructor)" data-id="new Promise">new</a></li></ul><h2><span class="type">constructor</span><span class="name">new Promise</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/promise.js#L28">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new Promise([callback])</li></ul></li></ul><p>If <code>callback</code> was specified, passes it to <a href="#Promise.prototype.done" class="link-short" title="Promise#done (instance method)" data-id="Promise#done">Promise#done</a>.</p>
+</div></div></article><article id="Support.HashTree" data-title="Support.HashTree (namespace)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.HashTree" class="" title="Support.HashTree (namespace)" data-id="Support.HashTree">HashTree</a></li></ul><h2><span class="type">namespace</span><span class="name">Support.HashTree</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hash-tree.js#L17">View source code</a></div></header><div class="labels"><span class="internal">internal</span></div><div class="section description"><h3>Description</h3><div class="content"><p>Extended object instance that allows to access leaves of the tree by paths.
+
+</p>
+<h5>Example</h5>
+<pre><code>var tree = new HashTree({
+  forum: {
+    posts: [ 1, 2, 3 ]
+  }
+});
+
+console.log(tree.forum.posts); // -&gt; [ 1, 2, 3 ]
+console.log(tree.__get__(&apos;forum.posts&apos;)); // -&gt; [ 1, 2, 3 ]</code></pre>
+</div></div><div class="section class_methods"><h3>Class methods</h3><div class="content"><ul class="method-list"><li><a href="#Support.HashTree.get" class="" title="Support.HashTree.get (class method)" data-id="Support.HashTree.get">get</a></li><li><a href="#Support.HashTree.getKnownPaths" class="" title="Support.HashTree.getKnownPaths (class method)" data-id="Support.HashTree.getKnownPaths">getKnownPaths</a></li><li><a href="#Support.HashTree.has" class="" title="Support.HashTree.has (class method)" data-id="Support.HashTree.has">has</a></li><li><a href="#Support.HashTree.set" class="" title="Support.HashTree.set (class method)" data-id="Support.HashTree.set">set</a></li></ul></div></div></article><article id="Support.HashTree.get" data-title="Support.HashTree.get (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.HashTree" class="" title="Support.HashTree (namespace)" data-id="Support.HashTree">HashTree</a></li><li><a href="#Support.HashTree.get" class="" title="Support.HashTree.get (class method)" data-id="Support.HashTree.get">get</a></li></ul><h2><span class="type">class method</span><span class="name">Support.HashTree.get</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hash-tree.js#L57">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Support.HashTree.get(tree, path)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Mixed</li></ul></li></ul></li></ul></div></div></article><article id="Support.HashTree.getKnownPaths" data-title="Support.HashTree.getKnownPaths (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.HashTree" class="" title="Support.HashTree (namespace)" data-id="Support.HashTree">HashTree</a></li><li><a href="#Support.HashTree.getKnownPaths" class="" title="Support.HashTree.getKnownPaths (class method)" data-id="Support.HashTree.getKnownPaths">getKnownPaths</a></li></ul><h2><span class="type">class method</span><span class="name">Support.HashTree.getKnownPaths</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hash-tree.js#L117">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Support.HashTree.getKnownPaths(tree)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Array</li></ul></li></ul></li></ul></div></div></article><article id="Support.HashTree.has" data-title="Support.HashTree.has (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.HashTree" class="" title="Support.HashTree (namespace)" data-id="Support.HashTree">HashTree</a></li><li><a href="#Support.HashTree.has" class="" title="Support.HashTree.has (class method)" data-id="Support.HashTree.has">has</a></li></ul><h2><span class="type">class method</span><span class="name">Support.HashTree.has</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hash-tree.js#L125">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Support.HashTree.has(tree, path)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Boolean</li></ul></li></ul></li></ul></div></div></article><article id="Support.HashTree.set" data-title="Support.HashTree.set (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.HashTree" class="" title="Support.HashTree (namespace)" data-id="Support.HashTree">HashTree</a></li><li><a href="#Support.HashTree.set" class="" title="Support.HashTree.set (class method)" data-id="Support.HashTree.set">set</a></li></ul><h2><span class="type">class method</span><span class="name">Support.HashTree.set</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hash-tree.js#L87">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Support.HashTree.set(tree, path, val)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Null</li><li class="argument-type">Error</li></ul></li></ul></li></ul></div></div></article><article id="Support.Hooker" data-title="Support.Hooker (class)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.Hooker" class="" title="Support.Hooker (class)" data-id="Support.Hooker">Hooker</a></li></ul><h2><span class="type">class</span><span class="name">Support.Hooker</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hooker.js#L100">View source code</a></div></header><div class="labels"><span class="internal">internal</span></div><div class="section description"><h3>Description</h3><div class="content"><p>Hooks manager. Provides easy way to manage before/after filter chains.
+
+</p>
+<h5>Example</h5>
+<pre><code>var hooks = new Hooker();
+
+//
+// run function, with before/after hooks...
+hooks.before(&apos;spanish.pub&apos;, 20, function (callback) {
+  console.log(&apos;Amigos!&apos;);
+  callback();
+});
+
+hooks.before(&apos;spanish.pub&apos;, 10, function (callback) {
+  console.log(&apos;Hola,&apos;);
+  callback();
+});
+
+hooks.after(&apos;spanish.pub&apos;, function (callback) {
+  console.log(&apos;Adios!&apos;);
+  callback();
+});
+
+hooks.run(&apos;spanish.pub&apos;, function (callback) {
+  console.log(&apos;...inside pub...&apos;);
+  callback();
+}, function (err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  console.log(&apos;DONE&apos;);
+});
+// -&gt; Hola,
+// -&gt; Amigos!
+// -&gt; ...inside pub...
+// -&gt; Adios!
+// -&gt; DONE
+
+//
+// run function without before/after hooks...
+hooks.run(&apos;silent-room&apos;, function (callback) {
+  console.log(&apos;...inside pub...&apos;);
+  callback();
+}, function (err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  console.log(&apos;DONE&apos;);
+});
+// -&gt; ...inside pub...
+// -&gt; DONE
+
+//
+// interrupt execution of the chain
+hooks.before(&apos;movie&apos;, function (callback) {
+  if (global.hasPopcorn) {
+    callback();
+    return;
+  }
+
+  callback(new Error(&quot;No pop corn left...&quot;));
+});
+
+global.hasPopcorn = true;
+hooks.run(&apos;movie&apos;, function (callback) {
+  console.log(&apos;...watching movie...&apos;);
+  callback();
+}, function (err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  console.log(&apos;DONE&apos;);
+});
+// -&gt; ...watching movie...
+// -&gt; DONE
+
+global.hasPopcorn = false;
+hooks.run(&apos;movie&apos;, function (callback) {
+  console.log(&apos;...watching movie...&apos;);
+  callback();
+}, function (err) {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  console.log(&apos;DONE&apos;);
+});
+// -&gt; No pop corn left...</code></pre>
+</div></div><div class="section constructor"><h3>Constructor</h3><div class="content"></div><ul class="method-list"><li><a href="#Support.Hooker.new" class="" title="new Support.Hooker (constructor)" data-id="new Support.Hooker">new Support.Hooker</a></li></ul></div><div class="section class_methods"><h3>Class methods</h3><div class="content"><ul class="method-list"><li><a href="#Support.Hooker.after" class="" title="Support.Hooker.after (class method)" data-id="Support.Hooker.after">after</a></li><li><a href="#Support.Hooker.before" class="" title="Support.Hooker.before (class method)" data-id="Support.Hooker.before">before</a></li><li><a href="#Support.Hooker.create" class="" title="Support.Hooker.create (class method)" data-id="Support.Hooker.create">create</a></li><li><a href="#Support.Hooker.run" class="" title="Support.Hooker.run (class method)" data-id="Support.Hooker.run">run</a></li></ul></div></div><div class="section instance_methods"><h3>Instance methods</h3><div class="content"><ul class="method-list"><li><a href="#Support.Hooker.prototype.on" class="" title="Support.Hooker#on (instance method)" data-id="Support.Hooker#on">on</a></li></ul></div></div></article><article id="Support.Hooker.new" data-title="new Support.Hooker (constructor)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.Hooker" class="" title="Support.Hooker (class)" data-id="Support.Hooker">Hooker</a></li><li><a href="#Support.Hooker.new" class="" title="new Support.Hooker (constructor)" data-id="new Support.Hooker">new</a></li></ul><h2><span class="type">constructor</span><span class="name">new Support.Hooker</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hooker.js#L112">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">new Support.Hooker()</li></ul></li></ul></div></div><div class="alias aliases">Aliased as:
+<ul><li><a href="#Support.Hooker.create" class="" title="Support.Hooker.create (class method)" data-id="Support.Hooker.create">Support.Hooker.create</a></li></ul></div></article><article id="Support.Hooker.after" data-title="Support.Hooker.after (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.Hooker" class="" title="Support.Hooker (class)" data-id="Support.Hooker">Hooker</a></li><li><a href="#Support.Hooker.after" class="" title="Support.Hooker.after (class method)" data-id="Support.Hooker.after">after</a></li></ul><h2><span class="type">class method</span><span class="name">Support.Hooker.after</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hooker.js#L245">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Support.Hooker.after(bucket, weight, fn)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Boolean</li></ul></li></ul></li><li class="signature"><ul><li class="signature-call">Support.Hooker.after(bucket, fn)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Boolean</li></ul></li></ul></li></ul></div></div></article><article id="Support.Hooker.before" data-title="Support.Hooker.before (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.Hooker" class="" title="Support.Hooker (class)" data-id="Support.Hooker">Hooker</a></li><li><a href="#Support.Hooker.before" class="" title="Support.Hooker.before (class method)" data-id="Support.Hooker.before">before</a></li></ul><h2><span class="type">class method</span><span class="name">Support.Hooker.before</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hooker.js#L236">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Support.Hooker.before(bucket, weight, fn)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Boolean</li></ul></li></ul></li><li class="signature"><ul><li class="signature-call">Support.Hooker.before(bucket, fn)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Boolean</li></ul></li></ul></li></ul></div></div></article><article id="Support.Hooker.create" data-title="Support.Hooker.create (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.Hooker" class="" title="Support.Hooker (class)" data-id="Support.Hooker">Hooker</a></li><li><a href="#Support.Hooker.create" class="" title="Support.Hooker.create (class method)" data-id="Support.Hooker.create">create</a></li></ul><h2><span class="type">class method</span><span class="name">Support.Hooker.create</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hooker.js#L227">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Support.Hooker.create()</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type"><a href="#Support.Hooker" class="link-short" title="Support.Hooker (class)" data-id="Support.Hooker">Hooker</a></li></ul></li></ul></li></ul><p>Constructor proxy.</p>
+</div></div><div class="alias alias-of">Alias of:
+<ul><li><a href="#Support.Hooker.new" class="" title="new Support.Hooker (constructor)" data-id="new Support.Hooker">new Support.Hooker</a></li></ul></div></article><article id="Support.Hooker.run" data-title="Support.Hooker.run (class method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.Hooker" class="" title="Support.Hooker (class)" data-id="Support.Hooker">Hooker</a></li><li><a href="#Support.Hooker.run" class="" title="Support.Hooker.run (class method)" data-id="Support.Hooker.run">run</a></li></ul><h2><span class="type">class method</span><span class="name">Support.Hooker.run</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hooker.js#L269">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Support.Hooker.run(bucket[, arg1][, argN], block, callback, thisArg)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Void</li></ul></li></ul></li></ul><p><strong>NOTICE</strong> We support &quot;nested&quot; buckets or buckets with parents. Nesting is
+done with <code>.</code> so running hooks for <code>foo.bar</code> bucket will run:
+
+</p>
+<ul>
+<li>before <code>foo</code></li>
+<li>before <code>foo.bar</code></li>
+<li>block</li>
+<li>after <code>foo.bar</code></li>
+<li>after <code>foo</code></li>
+</ul>
+</div></div></article><article id="Support.Hooker.prototype.on" data-title="Support.Hooker#on (instance method)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.Hooker" class="" title="Support.Hooker (class)" data-id="Support.Hooker">Hooker</a></li><li><a href="#Support.Hooker.prototype.on" class="" title="Support.Hooker#on (instance method)" data-id="Support.Hooker#on">on</a></li></ul><h2><span class="type">instance method</span><span class="name">Support.Hooker#on</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/support/hooker.js#L254">View source code</a></div></header><div class="section method"><div class="content"><ul class="signatures"><li class="signature"><ul><li class="signature-call">Support.Hooker#on(bucket, weight, fn)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Boolean</li></ul></li></ul></li><li class="signature"><ul><li class="signature-call">Support.Hooker#on(bucket, fn)</li><li class="signature-returns"><ul class="argument-types"><li class="argument-type">Boolean</li></ul></li></ul></li></ul></div></div><div class="alias alias-of">Alias of:
+<ul><li>Hooker#after</li></ul></div></article><article id="Support.Promise" data-title="Support.Promise (class)" class="article"><header><ul class="breadcrumbs"><li><a href="#home">Home</a></li><li><a href="#Support.Promise" class="" title="Support.Promise (class)" data-id="Support.Promise">Promise</a></li></ul><h2><span class="type">class</span><span class="name">Support.Promise</span></h2><div class="source"><a href="https://github.com/nodeca/nlib/blob/a8ebc2/lib/nlib/settings/promise.js#L18">View source code</a></div></header><div class="labels"><span class="internal">internal</span></div><div class="section description"><h3>Description</h3><div class="content"><p>Provides basic but sexy promise implementation.
+
+</p>
+<h5>Example</h5>
+<p>var p = Promise(function when_done(err, user) {
+if (err) {
+// do something
+}
+
+</p>
+<p>// with user as well...
+});
+
+</p>
+<p>User.find({id: 1}, p.resolve);</p>
+</div></div></article><footer class="footer"><p>Last updated on Wed, 07 Mar 2012 22:40:07 GMT. Generated by <a href="http://github.com/nodeca/ndoc">ndoc</a></p></footer></article><script src="javascripts/jquery.js"></script><!-- scripts concatenated and minified via ant build script--><script defer src="javascripts/plugins.js"></script>
+<script defer src="javascripts/prettify.js"></script>
+<script defer src="javascripts/script.js"></script>
+<!-- end scripts--><!--[if lt IE 7]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script><script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})
+
+</script><![endif]--></body></html>
